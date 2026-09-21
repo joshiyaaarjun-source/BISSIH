@@ -11,10 +11,23 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 const ROOT = __dirname;
-const DATA = path.join(ROOT, 'data');
-const UP = path.join(ROOT, 'uploads');
-fs.mkdirSync(DATA, { recursive: true });
+
+// Static project data lives inside the deployment.
+const PROJECT_DATA = path.join(ROOT, 'data');
+
+// Runtime-generated data must live in /tmp on Vercel.
+const RUNTIME_DATA = process.env.VERCEL
+  ? path.join('/tmp', 'bissih-data')
+  : PROJECT_DATA;
+
+const UP = process.env.VERCEL
+  ? path.join('/tmp', 'bissih-uploads')
+  : path.join(ROOT, 'uploads');
+
+fs.mkdirSync(RUNTIME_DATA, { recursive: true });
 fs.mkdirSync(UP, { recursive: true });
+
+const DATA = RUNTIME_DATA;
 
 const LOCAL_DB = path.join(DATA, 'db.json');
 if (!fs.existsSync(LOCAL_DB)) {
@@ -36,7 +49,7 @@ async function connectMongo() {
     console.log('MONGO_URI not set — using local JSON fallback.');
     const d = localRead();
     if (!d.qco_appliances || !d.qco_appliances.length) {
-      const source = path.join(DATA, 'bis_qco_electrical_appliances_dataset.json');
+      const source = path.join(PROJECT_DATA, 'bis_qco_electrical_appliances_dataset.json');
       if (fs.existsSync(source)) {
         const rows = JSON.parse(fs.readFileSync(source, 'utf8'));
         d.qco_appliances = rows.map(normalizeQco);
@@ -64,7 +77,7 @@ async function seedQcoIfEmpty() {
     console.log(`QCO dataset already present: ${count} documents`);
     return;
   }
-  const source = path.join(DATA, 'bis_qco_electrical_appliances_dataset.json');
+  const source = path.join(PROJECT_DATA, 'bis_qco_electrical_appliances_dataset.json');
   if (!fs.existsSync(source)) return;
   const rows = JSON.parse(fs.readFileSync(source, 'utf8'));
   const docs = rows.map(normalizeQco);
