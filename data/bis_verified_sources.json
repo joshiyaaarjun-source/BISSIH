@@ -1,0 +1,29 @@
+[
+  {
+    "product": "Microwave Ovens",
+    "indian_standard": "IS 302-2-25:2014",
+    "source_type": "Official BIS Uniform Test Report Format",
+    "source_url": "https://www.bis.gov.in/PDF/UTRFs/UTRF_IS_302_2_25_Microwave_Oven.pdf"
+  },
+  {
+    "product": "Microwave Ovens",
+    "indian_standard": "IS 302-2-25:2014",
+    "source_type": "Official BIS LIMS laboratory scope",
+    "source_url": "https://lims.bis.gov.in/home/search_is_number/?is_number__doc_no=302"
+  },
+  {
+    "product": "Product Certification",
+    "source_type": "Official BIS certification process",
+    "source_url": "https://www.bis.gov.in/product-certification/product-certification-process/?lang=en"
+  },
+  {
+    "product": "BIS License Application",
+    "source_type": "Official BIS application guidance",
+    "source_url": "https://www.bis.gov.in/apply-for-a-license/?lang=en"
+  },
+  {
+    "product": "Know Your Standard",
+    "source_type": "Official BIS standard discovery",
+    "source_url": "https://www.bis.gov.in/know-your-standard/?lang=en"
+  }
+]

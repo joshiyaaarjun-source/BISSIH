@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BIS COMPASS — Compliance Intelligence</title>
+<style>
+:root{
+  --black:#211718;--storm:#3C4755;--convoy:#637687;--red:#B00303;--cream:#C5B1A6;
+  --paper:#eee4df;--white:#fffaf7;
+}
+*{box-sizing:border-box} html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--black);font-family:Arial,Helvetica,sans-serif}
+h1,h2,h3,.wordmark,.metric,.serif{font-family:Georgia,'Times New Roman',serif}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+.nav{height:76px;background:var(--black);color:var(--cream);display:flex;align-items:center;justify-content:space-between;padding:0 5vw;position:sticky;top:0;z-index:50}
+.navlinks{display:flex;gap:26px;font-size:11px;letter-spacing:1.7px;text-transform:uppercase;color:var(--convoy)}
+.wordmark{font-size:29px;letter-spacing:1px}.navright{display:flex;align-items:center;gap:18px}
+.lang{background:transparent;color:var(--cream);border:1px solid var(--convoy);padding:9px 12px;font-size:11px;text-transform:uppercase;letter-spacing:1px}
+.hero{display:grid;grid-template-columns:1fr 1fr;min-height:620px}
+.hero-left{padding:90px 7vw;background:var(--paper);display:flex;flex-direction:column;justify-content:center}
+.eyebrow{font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--red);font-weight:700;margin-bottom:20px}
+.hero h1{font-size:68px;line-height:1.02;font-weight:500;margin:0 0 24px;max-width:700px}
+.rule{height:1px;background:var(--convoy);width:100%;margin:0 0 25px}
+.lead{font-size:16px;line-height:1.7;max-width:600px;color:var(--storm)}
+.btn{border:0;background:var(--black);color:var(--cream);padding:15px 20px;text-transform:uppercase;letter-spacing:1.6px;font-size:11px;margin-top:26px;width:max-content}
+.btn:hover{background:var(--red)} .btn.light{background:var(--cream);color:var(--black)} .btn.light:hover{background:var(--white)}
+.hero-right{background:var(--storm);padding:65px;display:flex;align-items:center;justify-content:center;position:relative}
+.snapshot{background:var(--black);color:var(--cream);padding:34px;width:min(510px,100%);border:1px solid var(--convoy)}
+.snapshot .top{display:flex;justify-content:space-between;border-bottom:1px solid var(--convoy);padding-bottom:18px}
+.badge{border:1px solid var(--cream);border-radius:50%;width:74px;height:74px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:9px;letter-spacing:1px;text-transform:uppercase}
+.metric{font-size:64px;margin:28px 0 5px}.snapshot p{color:var(--convoy);line-height:1.5}
+.minirow{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--convoy);margin-top:28px;padding-top:18px;gap:14px}
+.minirow strong{display:block;font:28px Georgia}.minirow span{font-size:9px;text-transform:uppercase;letter-spacing:1.2px;color:var(--convoy)}
+.strip{background:var(--storm);color:var(--cream);display:grid;grid-template-columns:repeat(4,1fr);padding:28px 7vw;border-top:1px solid var(--convoy)}
+.strip div{display:flex;gap:12px;align-items:center;font-size:11px;letter-spacing:1.4px;text-transform:uppercase}.icon{font-size:18px}
+.section{padding:80px 7vw}.section.cream{background:var(--paper)} .section.dark{background:var(--storm);color:var(--cream)}
+.sectionhead{max-width:800px;margin-bottom:40px}.section h2{font-size:48px;line-height:1.05;font-weight:500;margin:0}.section.dark .eyebrow{color:var(--cream)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}.card{min-height:270px;padding:30px;display:flex;flex-direction:column;justify-content:space-between}.card.storm{background:var(--storm);color:var(--cream)}.card.red{background:var(--red);color:var(--cream)}.card.cream{background:var(--cream);color:var(--black)}
+.card .big{font:54px Georgia}.card h3{font-size:27px;margin:0 0 8px;font-weight:500}.small{font-size:12px;line-height:1.6;color:var(--convoy)}
+.app{padding:70px 5vw;background:var(--paper)} .appnav{display:flex;gap:2px;margin-bottom:2px}.tab{background:var(--black);color:var(--cream);border:0;padding:14px 18px;font-size:10px;text-transform:uppercase;letter-spacing:1.4px}.tab.active{background:var(--red)}
+.panel{background:var(--white);padding:35px;border-top:2px solid var(--black)}
+.panel h2{font-size:38px;font-weight:500;margin:0 0 8px}.panelhead{display:flex;justify-content:space-between;gap:25px;align-items:flex-end;margin-bottom:28px}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:2px}.kpi{background:var(--storm);color:var(--cream);padding:22px}.kpi.red{background:var(--red)}.kpi.cream{background:var(--cream);color:var(--black)}.kpi .n{font:42px Georgia}.kpi label{display:block;font-size:9px;text-transform:uppercase;letter-spacing:1.4px;margin-top:7px}
+.products{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:35px}.product{background:var(--cream);padding:24px}.product:nth-child(3n+2){background:var(--storm);color:var(--cream)}.product:nth-child(3n){background:var(--red);color:var(--cream)}.product h3{font-size:25px;margin:0 0 12px}.status{font-size:10px;text-transform:uppercase;letter-spacing:1.3px}.product button{margin-top:22px;border:1px solid currentColor;background:transparent;padding:10px 12px;font-size:9px;text-transform:uppercase;letter-spacing:1.2px;color:inherit}
+.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.field label{font-size:10px;text-transform:uppercase;letter-spacing:1.3px;display:block;margin-bottom:7px}.field input,.field select,.field textarea{width:100%;border:1px solid var(--convoy);background:transparent;padding:13px;color:var(--black);border-radius:2px}.field textarea{min-height:100px}
+.mode{display:flex;gap:2px;margin:25px 0}.mode button{border:0;background:var(--cream);padding:14px 18px;text-transform:uppercase;font-size:10px;letter-spacing:1.2px}.mode button.selected{background:var(--black);color:var(--cream)}
+.drop{border:1px dashed var(--convoy);padding:28px;text-align:center;margin-top:14px}.drop input{display:none}.drop label{display:inline-block;background:var(--black);color:var(--cream);padding:12px 15px;text-transform:uppercase;font-size:10px;letter-spacing:1.2px}
+.roadmap{display:grid;grid-template-columns:repeat(3,1fr);gap:2px}.step{background:var(--cream);padding:25px;min-height:180px}.step:nth-child(3n+2){background:var(--storm);color:var(--cream)}.step:nth-child(3n){background:var(--red);color:var(--cream)}.step .num{font:35px Georgia}.step h3{font-size:22px;margin:15px 0 8px}.step p{font-size:12px;line-height:1.5}.evidence{display:grid;grid-template-columns:1.2fr .8fr;gap:2px;margin-top:35px}.box{padding:28px;background:var(--storm);color:var(--cream)}.box.cream{background:var(--cream);color:var(--black)}.box.red{background:var(--red);color:var(--cream)}.source{border-top:1px solid currentColor;padding:14px 0;margin-top:15px;font-size:11px;line-height:1.6}
+.blueprint{display:grid;grid-template-columns:1fr 1fr;gap:2px}.blueprint .box{min-height:240px}
+.compass{position:fixed;right:24px;bottom:24px;width:62px;height:62px;border-radius:50%;background:var(--red);color:var(--cream);border:1px solid var(--cream);z-index:100;display:flex;align-items:center;justify-content:center;font:25px Georgia}
+.chat{position:fixed;right:24px;bottom:96px;width:380px;max-width:calc(100vw - 35px);background:var(--black);color:var(--cream);z-index:99;display:none;border:1px solid var(--convoy)}.chat.open{display:block}.chathead{padding:18px;border-bottom:1px solid var(--convoy);display:flex;justify-content:space-between}.chatbody{height:340px;overflow:auto;padding:18px}.msg{padding:12px;margin-bottom:10px;font-size:12px;line-height:1.5}.bot{background:var(--storm)}.user{background:var(--cream);color:var(--black);margin-left:30px}.chatinput{display:flex;border-top:1px solid var(--convoy)}.chatinput input{flex:1;background:transparent;border:0;padding:15px;color:var(--cream);outline:0}.chatinput button{background:var(--cream);border:0;padding:0 14px}.voice{background:var(--red)!important;color:var(--cream)}
+.footer{background:var(--black);color:var(--cream);display:grid;grid-template-columns:2fr 1fr;padding:70px 7vw}.footer h2{font-size:45px;font-weight:500}.footer .mark{display:flex;align-items:center;justify-content:center;border-left:1px solid var(--convoy);font-size:11px;letter-spacing:2px;text-transform:uppercase}
+.toast{position:fixed;left:50%;bottom:25px;transform:translateX(-50%);background:var(--black);color:var(--cream);padding:13px 18px;font-size:11px;z-index:200;display:none}
+
+.vision-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:2px}.vision-controls{display:grid;grid-template-columns:1fr 1fr;gap:2px;margin-top:20px}.vision-upload{display:block;background:var(--black);color:var(--cream);padding:14px;text-align:center;text-transform:uppercase;font-size:10px;letter-spacing:1.2px;cursor:pointer}.vision-upload input{display:none}.vision-controls select{border:1px solid var(--convoy);background:var(--paper);color:var(--black);padding:12px;border-radius:2px}.vision-preview{margin-top:18px;border-top:1px solid var(--convoy);padding-top:18px}.vision-preview img{display:block;width:100%;max-height:330px;object-fit:contain;background:var(--storm)}.vision-progress{font-size:11px;margin-top:14px;color:var(--convoy);min-height:18px}.ocr-box{margin-top:18px;background:var(--black);padding:14px;color:var(--cream);border-top:1px solid var(--convoy)}.ocr-box pre{white-space:pre-wrap;word-break:break-word;font:11px Arial;line-height:1.6;max-height:180px;overflow:auto;margin:10px 0 0;color:var(--cream)}.vision-report{margin-top:35px;border-top:2px solid var(--black);padding-top:30px}.vision-report-head{display:flex;justify-content:space-between;gap:25px;align-items:flex-end}.vision-score{background:var(--black);color:var(--cream);padding:20px 28px;min-width:170px;text-align:center}.vision-score span{display:block;font:52px Georgia}.vision-score small{font-size:9px;letter-spacing:1.4px}.vision-table{margin-top:25px;border-top:1px solid var(--convoy)}.vision-row{display:grid;grid-template-columns:1.1fr 1fr .5fr;gap:2px;border-bottom:1px solid var(--convoy);font-size:11px}.vision-row>div{padding:14px;background:var(--paper)}.vision-row .result{font-weight:700;text-transform:uppercase;letter-spacing:1px}.vision-row.head>div{background:var(--storm);color:var(--cream);text-transform:uppercase;letter-spacing:1.2px;font-size:9px}.result.good{color:var(--black)}.result.warn,.result.bad{color:var(--red)}
+@media(max-width:900px){.vision-grid{grid-template-columns:1fr}.vision-controls{grid-template-columns:1fr}.vision-report-head{align-items:flex-start;flex-direction:column}.vision-row{grid-template-columns:1fr}}
+
+@media(max-width:900px){.hero,.evidence,.blueprint{grid-template-columns:1fr}.hero h1{font-size:52px}.strip,.kpis,.grid3,.products,.roadmap{grid-template-columns:1fr 1fr}.navlinks{display:none}}
+@media(max-width:600px){.strip,.kpis,.grid3,.products,.roadmap,.formgrid{grid-template-columns:1fr}.hero-left,.hero-right{padding:50px 7vw}.section{padding:55px 6vw}.nav{padding:0 4vw}.wordmark{font-size:23px}.hero h1{font-size:44px}}
+
+.graph-shell{display:grid;grid-template-columns:1.35fr .65fr;gap:2px;margin-top:25px}.graph-canvas{background:#171313;color:var(--cream);min-height:590px;padding:20px;position:relative;overflow:hidden}.graph-canvas svg{width:100%;height:550px}.graph-node{cursor:pointer}.graph-node rect{rx:10;fill:#2d353f;stroke:#637687;stroke-width:1.5}.graph-node text{fill:#fffaf7;font-size:12px;font-family:Arial}.graph-node .sub{fill:#a9b3bd;font-size:9px}.graph-node.done rect{stroke:#6fa37e}.graph-node.missing rect{stroke:#d56a6a}.graph-node.review rect{stroke:#d3a75c}.edge{stroke:#637687;stroke-width:1.5;opacity:.7}.graph-side{display:flex;flex-direction:column;gap:2px}.graph-card{padding:22px;background:var(--storm);color:var(--cream)}.graph-card.cream{background:var(--cream);color:var(--black)}.graph-card.red{background:var(--red);color:var(--cream)}.graph-card h3{font:26px Georgia;margin:0 0 10px}.status-pill{display:inline-block;padding:5px 8px;border-radius:20px;font-size:9px;letter-spacing:1px;text-transform:uppercase;border:1px solid currentColor}.status-done{color:#9fd0ad}.status-missing{color:#ffaaa6}.status-review{color:#f0cb7b}.priority-row{display:grid;grid-template-columns:48px 1fr auto;gap:10px;align-items:center;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.14)}.priority-row:last-child{border-bottom:0}.prio{font-size:9px;font-weight:700;letter-spacing:1px}.resource-link{display:block;color:inherit;text-decoration:none;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.15);font-size:11px}.resource-link:hover{text-decoration:underline}.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:2px}.timeline-item{padding:18px;background:var(--cream);color:var(--black)}.timeline-item:nth-child(2){background:var(--storm);color:var(--cream)}.timeline-item:nth-child(3){background:var(--red);color:var(--cream)}.timeline-item:nth-child(4){background:var(--black);color:var(--cream)}.timeline-item b{font:25px Georgia;display:block;margin:8px 0}.source-tag{font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--convoy)}.graph-toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:16px 0}.graph-toolbar input{flex:1;min-width:220px;padding:12px;border:1px solid var(--convoy);background:transparent}.graph-toolbar .btn{margin:0}.graph-note{padding:12px;background:#f4eee9;border-left:4px solid var(--red);font-size:11px;line-height:1.6;margin-top:15px}
+@media(max-width:900px){.graph-shell{grid-template-columns:1fr}.timeline{grid-template-columns:1fr 1fr}.hero{grid-template-columns:1fr}.grid3,.products,.roadmap{grid-template-columns:1fr}.strip{grid-template-columns:1fr 1fr}.formgrid{grid-template-columns:1fr}}
+
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="navlinks"><span>Portfolio</span><span>Compliance</span><span>Evidence</span></div>
+  <div class="wordmark">BIS COMPASS</div>
+  <div class="navright">
+    <select class="lang" id="language" onchange="changeLanguage()">
+      <option value="en">English</option><option value="hi">हिन्दी</option><option value="ta">தமிழ்</option>
+      <option value="te">తెలుగు</option><option value="bn">বাংলা</option><option value="mr">मराठी</option>
+      <option value="gu">ગુજરાતી</option><option value="kn">ಕನ್ನಡ</option><option value="ml">മലയാളം</option>
+      <option value="pa">ਪੰਜਾਬੀ</option><option value="or">ଓଡ଼ିଆ</option><option value="as">অসমীয়া</option>
+      <option value="ur">اردو</option>
+    </select>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-left">
+    <div class="eyebrow" data-i18n="eyebrow">BIS COMPLIANCE INTELLIGENCE</div>
+    <h1 data-i18n="heroTitle">Every product.<br>One state of truth.</h1>
+    <div class="rule"></div>
+    <p class="lead" data-i18n="heroText">Identify applicable Indian Standards, build a source-backed compliance roadmap, verify documents with AI, and manage an entire product portfolio from one intelligent compass.</p>
+    <button class="btn" onclick="go('workspace')" data-i18n="start">Start with a product →</button>
+  </div>
+  <div class="hero-right">
+    <div class="snapshot">
+      <div class="top"><div><div class="eyebrow" style="color:var(--cream)">LIVE COMPLIANCE SNAPSHOT</div><strong style="font:26px Georgia">Electric Kettle</strong></div><div class="badge">Evidence<br>Backed</div></div>
+      <div class="metric">78%</div><div style="font-size:11px;text-transform:uppercase;letter-spacing:1.5px">Portfolio readiness</div>
+      <p>2 evidence gaps · 1 review required · 4 source-backed requirements</p>
+      <div class="minirow"><div><strong>04</strong><span>Sources</span></div><div><strong>06</strong><span>Stages</span></div><div><strong>02</strong><span>Alerts</span></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="strip">
+  <div><span class="icon">⌁</span> Source-backed RAG</div><div><span class="icon">◌</span> AI verification</div><div><span class="icon">◇</span> Portfolio blueprints</div><div><span class="icon">◎</span> 13 languages</div>
+</div>
+
+<section class="section cream" id="features">
+  <div class="sectionhead"><div class="eyebrow">THE DIFFERENCE</div><h2>Compliance that explains itself.</h2></div>
+  <div class="grid3">
+    <div class="card storm"><div class="big">01</div><div><h3>RAG + Evidence</h3><div class="small" style="color:var(--cream)">Answers are tied to uploaded BIS PDFs, standards and clauses instead of unsupported model memory.</div></div></div>
+    <div class="card red"><div class="big">02</div><div><h3>AI Licence Check</h3><div class="small" style="color:var(--cream)">Extract licence fields and compare manufacturer, product, standard, scope and validity for review.</div></div></div>
+    <div class="card cream"><div class="big">03</div><div><h3>Blueprint Scale</h3><div class="small">Set common manufacturer information once, then create hundreds of products from the same blueprint.</div></div></div>
+  </div>
+</section>
+
+<section class="app" id="workspace">
+  <div class="appnav">
+    <button class="tab active" onclick="showTab('portfolio',this)">Portfolio</button>
+    <button class="tab" onclick="showTab('product',this)">Product Builder</button>
+     <button class="tab" onclick="showTab('vision',this)">Compass Vision</button>
+    <button class="tab" onclick="showTab('standards',this)">Standards + RAG</button>
+    <button class="tab" onclick="showTab('graph',this)">Knowledge Graph</button>
+    <button class="tab" onclick="showTab('roadmap',this)">Compliance Map</button>
+    <button class="tab" onclick="showTab('evidence',this)">Evidence + Licence</button>
+  </div>
+
+  <div class="panel" id="portfolio">
+    <div class="panelhead"><div><div class="eyebrow">YOUR PORTFOLIO</div><h2>Every product, one state of truth.</h2><p class="small">One-product guided entry for smaller manufacturers. Blueprint and bulk database import for large portfolios.</p></div><button class="btn" onclick="showTab('product')">Add product +</button></div>
+    <div class="kpis">
+      <div class="kpi"><div class="n" id="total">6</div><label>Total products</label></div><div class="kpi cream"><div class="n">4</div><label>Compliant</label></div><div class="kpi"><div class="n">1</div><label>Needs action</label></div><div class="kpi red"><div class="n">1</div><label>Critical review</label></div>
+    </div>
+    <div class="products" id="productList">
+      <div class="product"><div class="status">Needs review</div><h3>Electric Kettle</h3><div class="small">EK-500 · 5L · Chennai</div><button onclick="selectProduct('Electric Kettle')">Open compliance →</button></div>
+      <div class="product"><div class="status">Compliant</div><h3>Mixer Grinder</h3><div class="small" style="color:var(--cream)">MG-200 · Pune</div><button onclick="selectProduct('Mixer Grinder')">Open compliance →</button></div>
+      <div class="product"><div class="status">Compliant</div><h3>Ceiling Fan</h3><div class="small" style="color:var(--cream)">CF-120 · Delhi</div><button onclick="selectProduct('Ceiling Fan')">Open compliance →</button></div>
+    </div>
+  </div>
+
+  <div class="panel" id="product" style="display:none">
+    <div class="eyebrow">PRODUCT ONBOARDING</div><h2>Choose your scale.</h2>
+    <div class="mode"><button id="smallMode" class="selected" onclick="setMode('small')">Small manufacturer · Guided form</button><button id="largeMode" onclick="setMode('large')">Large manufacturer · Blueprint</button></div>
+    <div id="smallForm">
+      <div class="formgrid">
+        <div class="field"><label>Manufacturer</label><input id="manufacturer" placeholder="ABC Appliances Pvt Ltd"></div>
+        <div class="field"><label>Product name</label><input id="pname" placeholder="5L Electric Kettle"></div>
+        <div class="field"><label>Model / SKU</label><input id="model" placeholder="EK-500"></div>
+        <div class="field"><label>Factory location</label><input id="factory" placeholder="Chennai"></div>
+        <div class="field"><label>Product category</label><input id="category" placeholder="Electrical appliance"></div>
+        <div class="field"><label>Existing licence (optional)</label><input id="licence" placeholder="Licence number"></div>
+      </div>
+      <button class="btn" onclick="createProduct()">Identify product + build roadmap →</button>
+    </div>
+    <div id="largeForm" style="display:none">
+      <div class="blueprint">
+        <div class="box"><div class="eyebrow" style="color:var(--cream)">MANUFACTURER BLUEPRINT</div><h3 style="font:31px Georgia;margin:0 0 10px">Electrical Appliances</h3><p style="font-size:12px;line-height:1.6;color:var(--cream)">Shared factory, manufacturer, quality-system and certification information is defined once.</p><button class="btn light" onclick="toast('Blueprint selected — shared fields will propagate.')">Use blueprint</button></div>
+        <div class="box cream"><div class="eyebrow">BULK PRODUCTS</div><h3 style="font:31px Georgia;margin:0 0 10px">Add many at once.</h3><p style="font-size:12px;line-height:1.6">Upload CSV, Excel or JSON data and import it into the backend database. QCO-shaped datasets are stored in the MongoDB qco_appliances collection.</p><div class="drop"><label>Upload CSV / Excel<input type="file" accept=".csv,.xlsx,.xls,.json" onchange="filePicked(this)"></label><div id="bulkName" style="font-size:11px;margin-top:12px">No file selected</div></div></div>
+      </div>
+      <button class="btn" onclick="toast('Demo: 24 products created from the blueprint.')">Apply blueprint to portfolio →</button>
+    </div>
+  </div>
+
+  <div class="panel" id="vision" style="display:none">
+    <div class="panelhead">
+      <div><div class="eyebrow">COMPASS VISION</div><h2>Scan the product. Read the evidence.</h2><p class="small">Upload or capture a product image, label, licence or packaging. COMPASS uses browser OCR when available, then compares the visible information with the demo compliance rule set and produces an explainable assessment.</p></div>
+    </div>
+    <div class="vision-grid">
+      <div class="vision-capture box cream">
+        <div class="eyebrow">01 · IMAGE INPUT</div>
+        <h3 style="font:31px Georgia;margin:0 0 10px">Show COMPASS what you see.</h3>
+        <p style="font-size:12px;line-height:1.6">For a phone demo, tap capture to use the rear camera. On desktop, choose an image file.</p>
+        <div class="vision-controls">
+          <label class="vision-upload">Capture / upload image<input id="visionFile" type="file" accept="image/*" capture="environment"></label>
+          <select id="visionCategory" aria-label="Product category">
+            <option value="kettle">Electric Kettle</option><option value="mixer">Mixer Grinder</option><option value="fan">Ceiling Fan</option><option value="generic">Other / Unknown Product</option>
+          </select>
+        </div>
+        <div id="visionFileName" class="small" style="margin-top:12px">No image selected</div>
+        <div id="visionPreviewWrap" class="vision-preview" style="display:none"><img id="visionPreview" alt="Uploaded product preview"><div id="visionMeta" class="source"></div></div>
+        <button class="btn" id="analyzeVision" type="button" disabled>Analyze image →</button>
+        <div id="visionProgress" class="vision-progress" aria-live="polite"></div>
+      </div>
+      <div class="box">
+        <div class="eyebrow" style="color:var(--cream)">02 · VISUAL INTELLIGENCE</div>
+        <h3 style="font:31px Georgia;margin:0 0 10px">Image → OCR → comparison → report</h3>
+        <div class="source">A. Read visible text from the image<br>B. Identify product context<br>C. Compare visible fields with requirements<br>D. Separate visible evidence from missing documentary evidence<br>E. Explain the result in plain language<br>F. Produce a full-scale review trail</div>
+        <div id="ocrBox" class="ocr-box" style="display:none"><b>OCR text</b><pre id="ocrText"></pre></div>
+      </div>
+    </div>
+    <div id="visionReport" class="vision-report" style="display:none">
+      <div class="vision-report-head"><div><div class="eyebrow">03 · VISUAL COMPLIANCE ASSESSMENT</div><h2 id="visionTitle">Assessment</h2><p id="visionSummary" class="small"></p></div><div class="vision-score"><span id="visionScore">—</span><small>VISUAL READINESS</small></div></div>
+      <div class="vision-table" id="visionTable"></div>
+      <div class="evidence">
+        <div class="box cream"><div class="eyebrow">THE ANALOGY</div><h3 style="font:28px Georgia;margin:0 0 8px">Think of it like a vehicle inspection.</h3><p id="visionAnalogy" style="font-size:12px;line-height:1.7"></p></div>
+        <div class="box red"><div class="eyebrow" style="color:var(--cream)">WHAT THIS DOES NOT PROVE</div><h3 style="font:28px Georgia;margin:0 0 8px">A photograph is evidence, not certification.</h3><p style="font-size:12px;line-height:1.7">A visual scan can identify visible information and flag gaps. It cannot prove laboratory testing, factory controls, or formal BIS certification.</p></div>
+      </div>
+      <div class="box" style="margin-top:2px"><div class="eyebrow" style="color:var(--cream)">SOURCE / TRACE</div><h3 style="font:28px Georgia;margin:0 0 8px" id="visionSource">Demo rule set · connect your uploaded BIS PDF/RAG corpus for production citations.</h3><p class="small" style="color:var(--cream)">The demo keeps visible findings, missing evidence and human-review boundaries separate. Replace the demo rules with your approved BIS corpus/RAG retrieval layer before using this for real compliance decisions.</p></div>
+    </div>
+  </div>
+
+  <div class="panel" id="standards" style="display:none">
+    <div class="panelhead"><div><div class="eyebrow">STANDARDS INTELLIGENCE</div><h2>Give COMPASS the source.</h2><p class="small">Upload the regulations/standards PDF. The demo simulates chunking, retrieval and source-backed answers.</p></div></div>
+    <div class="drop"><label>Upload BIS PDF<input type="file" accept=".pdf" onchange="pdfPicked(this)"></label><div id="pdfName" style="margin-top:12px;font-size:11px">No PDF selected</div></div>
+    <div class="box" style="margin-top:18px">
+      <div class="eyebrow" style="color:var(--cream)">QCO KNOWLEDGE BASE</div>
+      <h3 style="font:27px Georgia;margin:0 0 10px">Search 90 electrical-appliance entries</h3>
+      <div style="display:flex;gap:10px;flex-wrap:wrap"><input id="qcoSearch" placeholder="Try kettle, kitchen, fan…" style="flex:1;min-width:220px;padding:12px;border-radius:8px;border:1px solid #bbb"><button class="btn" onclick="searchQco()">Search</button></div>
+      <div id="qcoResults" style="margin-top:14px"></div>
+    </div>
+    <div class="evidence">
+      <div class="box"><div class="eyebrow" style="color:var(--cream)">RAG PIPELINE</div><h3 style="font:31px Georgia;margin:0">Document → chunks → retrieval → answer</h3><div class="source">1. Extract PDF text<br>2. Split into searchable chunks<br>3. Embed into vector store<br>4. Retrieve relevant clauses<br>5. LLM answers only from retrieved evidence</div></div>
+      <div class="box cream"><div class="eyebrow">ASK COMPASS</div><h3 style="font:27px Georgia">“What tests are required?”</h3><p style="font-size:12px;line-height:1.6">For the selected product, COMPASS would retrieve the most relevant requirements and expose the source trail.</p><button class="btn" onclick="openChat()">Ask COMPASS →</button></div>
+    </div>
+  </div>
+
+  
+  <div class="panel" id="graph" style="display:none">
+    <div class="panelhead"><div><div class="eyebrow">BIS KNOWLEDGE GRAPH</div><h2>From product to certification.</h2><p class="small">The graph is driven by the bundled 90-product BIS/QCO dataset. Verified BIS mappings are shown as regulatory facts; unknown products are never assigned a fabricated IS/QCO number.</p></div><button class="btn" onclick="loadMicrowaveDemo()">Load microwave demo →</button></div>
+    <div class="graph-toolbar">
+      <input id="graphProduct" placeholder="Product name — e.g. Microwave Oven, Electric Kettle, Electric Grain Grinder">
+      <input id="graphCategory" placeholder="Category — e.g. Electrical Appliance">
+      <button class="btn" onclick="buildGraphFromInputs()">Build graph</button>
+    </div>
+    <div class="drop" style="margin-top:0"><label>Upload product image<input id="graphImage" type="file" accept="image/*" onchange="graphImagePicked(this)"></label><div id="graphImageName" style="margin-top:10px;font-size:11px">No product image selected</div></div>
+    <div class="drop"><label>Upload BIS standards / evidence<input id="graphEvidence" type="file" multiple accept=".pdf,.png,.jpg,.jpeg,.doc,.docx,.xlsx,.xls" onchange="graphEvidencePicked(this)"></label><div id="graphEvidenceNames" style="margin-top:10px;font-size:11px">No evidence selected</div></div>
+    <div id="graphStatus" class="graph-note">Start with the microwave demo or enter a product from the 90-product BIS appliance dataset.</div>
+    <div class="graph-shell">
+      <div class="graph-canvas"><div class="eyebrow" style="color:var(--cream);margin-bottom:0">LIVE RELATIONSHIP MAP</div><svg id="graphSvg" viewBox="0 0 900 550" aria-label="BIS compliance knowledge graph"></svg></div>
+      <div class="graph-side">
+        <div class="graph-card"><div class="eyebrow" style="color:var(--cream)">READINESS</div><h3 id="graphScore">—</h3><div id="graphCounts" class="small" style="color:var(--cream)"></div></div>
+        <div class="graph-card cream"><div class="eyebrow">SELECTED NODE</div><h3 id="graphNodeTitle">Click a graph node</h3><div id="graphNodeBody" style="font-size:11px;line-height:1.65">The detail panel will show the BIS source, evidence status, why it applies and the next action.</div><div id="graphNodeLink" style="margin-top:12px"></div></div>
+        <div class="graph-card"><div class="eyebrow" style="color:var(--cream)">PRIORITY QUEUE</div><div id="graphPriorities"></div></div>
+        <div class="graph-card red"><div class="eyebrow" style="color:var(--cream)">OFFICIAL BIS RESOURCES</div><div id="graphResources"></div></div>
+      </div>
+    </div>
+    <div class="timeline" id="graphTimeline"></div>
+    <div class="graph-note"><b>BIS-only rule:</b> COMPASS treats your bundled 90-product BIS/QCO dataset and verified official BIS sources as the regulatory source of truth. Any external information is clearly labelled as informational and is never promoted to a BIS requirement. Timelines are indicative planning estimates, not BIS guarantees.</div>
+  </div>
+
+  <div class="panel" id="roadmap" style="display:none">
+    <div class="eyebrow">COMPLIANCE MAP</div><h2 id="roadTitle">Electric Kettle · Compliance roadmap</h2>
+    <div class="roadmap" style="margin-top:35px">
+      <div class="step"><div class="num">01</div><h3>Product identification</h3><p>✓ Category and product profile established.</p></div>
+      <div class="step"><div class="num">02</div><h3>Applicable standard</h3><p>✓ Source-backed standard identified from the knowledge base.</p></div>
+      <div class="step"><div class="num">03</div><h3>Testing requirements</h3><p>⚠ 2 evidence items remain. View source and upload results.</p></div>
+      <div class="step"><div class="num">04</div><h3>Documentation</h3><p>⚠ 4 required documents are not yet verified.</p></div>
+      <div class="step"><div class="num">05</div><h3>Licence / certification</h3><p>○ Upload a licence for AI-assisted consistency checking.</p></div>
+      <div class="step"><div class="num">06</div><h3>Final review</h3><p>○ Complete evidence and request human review before claiming compliance.</p></div>
+    </div>
+  </div>
+
+  <div class="panel" id="evidence" style="display:none">
+    <div class="eyebrow">EVIDENCE VAULT</div><h2>Prove every requirement.</h2>
+    <div class="evidence">
+      <div class="box">
+        <h3 style="font:30px Georgia;margin:0">Electrical Safety Test</h3>
+        <div class="source"><b>Status:</b> MISSING<br><b>Required evidence:</b> Test report<br><b>Checks:</b> document type · manufacturer · product model · date · referenced standard</div>
+        <div class="drop"><label>Upload evidence<input type="file" onchange="evidencePicked(this)"></label><div id="evidenceName" style="margin-top:12px;font-size:11px">No evidence selected</div></div>
+      </div>
+      <div class="box red">
+        <div class="eyebrow" style="color:var(--cream)">AI LICENCE CHECK</div>
+        <h3 style="font:30px Georgia;margin:0">Consistency review</h3>
+        <p style="font-size:12px;line-height:1.6">Upload a licence/certificate. COMPASS extracts fields and compares them against the current product profile. It is an AI-assisted review, not a legal certification.</p>
+        <div class="drop" style="border-color:var(--cream)"><label style="background:var(--cream);color:var(--black)">Upload licence<input type="file" accept=".pdf,.png,.jpg,.jpeg" onchange="licencePicked(this)"></label><div id="licenceName" style="margin-top:12px;font-size:11px">No licence selected</div></div>
+      </div>
+    </div>
+    <div class="evidence">
+      <div class="box cream"><div class="eyebrow">WHY THIS STANDARD?</div><h3 style="font:28px Georgia;margin:0">Explainability trail</h3><p style="font-size:12px;line-height:1.6">Product category → retrieved BIS document → relevant clause → requirement → evidence requested.</p><button class="btn" onclick="openChat('Why is this standard applicable?')">Ask why →</button></div>
+      <div class="box"><div class="eyebrow" style="color:var(--cream)">SOURCE</div><h3 style="font:28px Georgia;margin:0">IS XXXX · Clause 6.3</h3><p style="font-size:12px;line-height:1.6;color:var(--cream)">Demo source citation. Connect your official BIS corpus/RAG pipeline for production evidence.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section dark">
+  <div class="sectionhead"><div class="eyebrow">INTELLIGENCE LAYER</div><h2>One compass. Many ways to move forward.</h2></div>
+  <div class="grid3">
+    <div class="card cream"><div class="big">RAG</div><div><h3>Source first.</h3><div class="small">Retrieve the evidence before generating an answer.</div></div></div>
+    <div class="card storm"><div class="big">AI</div><div><h3>Explain, don't invent.</h3><div class="small" style="color:var(--cream)">Show confidence, sources, missing evidence and human-review boundaries.</div></div></div>
+    <div class="card red"><div class="big">n8n</div><div><h3>Automate the seams.</h3><div class="small" style="color:var(--cream)">Route onboarding, CRM updates, alerts and follow-ups without making automation the product.</div></div></div>
+  </div>
+</section>
+
+<section class="footer">
+  <div><div class="eyebrow" style="color:var(--cream)">THE NEXT STEP</div><h2>Know the rule.<br>Know the evidence.<br>Know where to go.</h2><p style="color:var(--convoy);max-width:600px;line-height:1.7">BIS COMPASS turns scattered compliance information into a navigable, explainable workflow for manufacturers and consumers.</p></div>
+  <div class="mark">BIS COMPASS<br><br>Compliance Intelligence</div>
+</section>
+
+<div class="chat" id="chat">
+  <div class="chathead"><span><b style="font:22px Georgia">🧭 COMPASS</b><br><small style="color:var(--convoy)">Source-backed compliance assistant</small></span><button onclick="closeChat()" style="background:none;border:0;color:var(--cream);font-size:20px">×</button></div>
+  <div class="chatbody" id="chatbody"><div class="msg bot">Where should we go next? Ask me about a standard, missing evidence, your roadmap, or a licence document.</div></div>
+  <div class="chatinput"><input id="chatinput" placeholder="Ask COMPASS..." onkeydown="if(event.key==='Enter')sendChat()"><button class="voice" onclick="voice()">🎙</button><button onclick="sendChat()">→</button></div>
+</div>
+<button class="compass" onclick="toggleChat()">⌁</button>
+<div class="toast" id="toast"></div>
+
+<script>
+const translations={
+en:{eyebrow:"BIS COMPLIANCE INTELLIGENCE",heroTitle:"Every product. One state of truth.",heroText:"Identify applicable Indian Standards, build a source-backed compliance roadmap, verify documents with AI, and manage an entire product portfolio from one intelligent compass.",start:"Start with a product →"},
+hi:{eyebrow:"BIS अनुपालन बुद्धिमत्ता",heroTitle:"हर उत्पाद। सत्य की एक स्थिति।",heroText:"लागू भारतीय मानकों की पहचान करें, स्रोत-आधारित अनुपालन रोडमैप बनाएं, AI से दस्तावेज़ों की जाँच करें और एक ही कम्पास से पूरे उत्पाद पोर्टफोलियो को प्रबंधित करें।",start:"उत्पाद से शुरू करें →"},
+ta:{eyebrow:"BIS இணக்க நுண்ணறிவு",heroTitle:"ஒவ்வொரு தயாரிப்பும். ஒரே உண்மை நிலை.",heroText:"பொருந்தும் இந்திய தரநிலைகளை கண்டறிந்து, ஆதார அடிப்படையிலான இணக்கப் பாதையை உருவாக்கி, AI மூலம் ஆவணங்களைச் சரிபார்த்து, முழு தயாரிப்பு தொகுப்பையும் நிர்வகிக்கவும்.",start:"தயாரிப்புடன் தொடங்குங்கள் →"},
+te:{eyebrow:"BIS అనుగుణత మేధస్సు",heroTitle:"ప్రతి ఉత్పత్తి. ఒకే నిజ స్థితి.",heroText:"వర్తించే భారతీయ ప్రమాణాలను గుర్తించి, ఆధారాలతో కూడిన అనుగుణత మార్గాన్ని రూపొందించి, AIతో పత్రాలను తనిఖీ చేసి, మొత్తం ఉత్పత్తి పోర్ట్‌ఫోలియోను నిర్వహించండి.",start:"ఉత్పత్తితో ప్రారంభించండి →"},
+bn:{eyebrow:"BIS কমপ্লায়েন্স ইন্টেলিজেন্স",heroTitle:"প্রতিটি পণ্য। সত্যের এক অবস্থা।",heroText:"প্রযোজ্য ভারতীয় মান চিহ্নিত করুন, উৎস-সমর্থিত কমপ্লায়েন্স রোডম্যাপ তৈরি করুন এবং AI দিয়ে নথি যাচাই করুন।",start:"পণ্য দিয়ে শুরু করুন →"},
+mr:{eyebrow:"BIS अनुपालन बुद्धिमत्ता",heroTitle:"प्रत्येक उत्पादन. सत्याची एक स्थिती.",heroText:"लागू भारतीय मानके ओळखा, स्रोत-आधारित अनुपालन रोडमॅप तयार करा आणि AI द्वारे कागदपत्रांची तपासणी करा.",start:"उत्पादन सुरू करा →"},
+gu:{eyebrow:"BIS અનુપાલન બુદ્ધિ",heroTitle:"દરેક ઉત્પાદન. સત્યની એક સ્થિતિ.",heroText:"લાગુ ભારતીય ધોરણો ઓળખો, સ્ત્રોત આધારિત અનુપાલન રોડમેપ બનાવો અને AI વડે દસ્તાવેજો ચકાસો.",start:"ઉત્પાદનથી શરૂ કરો →"},
+kn:{eyebrow:"BIS ಅನುಸರಣೆ ಬುದ್ಧಿಮತ್ತೆ",heroTitle:"ಪ್ರತಿ ಉತ್ಪನ್ನ. ಸತ್ಯದ ಒಂದು ಸ್ಥಿತಿ.",heroText:"ಅನ್ವಯಿಸುವ ಭಾರತೀಯ ಮಾನದಂಡಗಳನ್ನು ಗುರುತಿಸಿ, ಮೂಲಾಧಾರಿತ ಅನುಸರಣೆ ಮಾರ್ಗಸೂಚಿ ರಚಿಸಿ ಮತ್ತು AI ಮೂಲಕ ದಾಖಲೆಗಳನ್ನು ಪರಿಶೀಲಿಸಿ.",start:"ಉತ್ಪನ್ನದಿಂದ ಪ್ರಾರಂಭಿಸಿ →"},
+ml:{eyebrow:"BIS അനുസരണ ബുദ്ധി",heroTitle:"ഓരോ ഉൽപ്പന്നവും. സത്യത്തിന്റെ ഒരു നില.",heroText:"ബാധകമായ ഇന്ത്യൻ മാനദണ്ഡങ്ങൾ കണ്ടെത്തി, ഉറവിടാധിഷ്ഠിത അനുസരണ റോഡ്മാപ്പ് സൃഷ്ടിച്ച് AI ഉപയോഗിച്ച് രേഖകൾ പരിശോധിക്കുക.",start:"ഉൽപ്പന്നത്തോടെ ആരംഭിക്കുക →"},
+pa:{eyebrow:"BIS ਪਾਲਣਾ ਬੁੱਧੀ",heroTitle:"ਹਰ ਉਤਪਾਦ। ਸੱਚ ਦੀ ਇੱਕ ਸਥਿਤੀ।",heroText:"ਲਾਗੂ ਭਾਰਤੀ ਮਿਆਰਾਂ ਦੀ ਪਛਾਣ ਕਰੋ, ਸਰੋਤ-ਅਧਾਰਿਤ ਪਾਲਣਾ ਰੋਡਮੈਪ ਬਣਾਓ ਅਤੇ AI ਨਾਲ ਦਸਤਾਵੇਜ਼ਾਂ ਦੀ ਜਾਂਚ ਕਰੋ।",start:"ਉਤਪਾਦ ਨਾਲ ਸ਼ੁਰੂ ਕਰੋ →"},
+or:{eyebrow:"BIS ଅନୁପାଳନ ବୁଦ୍ଧି",heroTitle:"ପ୍ରତ୍ୟେକ ଉତ୍ପାଦ। ସତ୍ୟର ଗୋଟିଏ ସ୍ଥିତି।",heroText:"ପ୍ରଯୁଜ୍ୟ ଭାରତୀୟ ମାନକ ଚିହ୍ନଟ କରନ୍ତୁ, ଉତ୍ସ-ଆଧାରିତ ଅନୁପାଳନ ରୋଡମ୍ୟାପ୍ ତିଆରି କରନ୍ତୁ ଏବଂ AI ଦ୍ୱାରା ଦଲିଲ ଯାଞ୍ଚ କରନ୍ତୁ।",start:"ଉତ୍ପାଦରୁ ଆରମ୍ଭ କରନ୍ତୁ →"},
+as:{eyebrow:"BIS অনুপালন বুদ্ধিমত্তা",heroTitle:"প্ৰতিটো সামগ্ৰী। সত্যৰ এক অৱস্থা।",heroText:"প্ৰযোজ্য ভাৰতীয় মান চিনাক্ত কৰক, উৎস-সমৰ্থিত অনুপালন ৰোডমেপ বনাওক আৰু AI-ৰে নথি পৰীক্ষা কৰক।",start:"সামগ্ৰীৰে আৰম্ভ কৰক →"},
+ur:{eyebrow:"BIS تعمیل ذہانت",heroTitle:"ہر مصنوعات۔ سچائی کی ایک حالت۔",heroText:"قابل اطلاق ہندوستانی معیارات کی شناخت کریں، ماخذ پر مبنی تعمیلی روڈ میپ بنائیں اور AI سے دستاویزات کی جانچ کریں۔",start:"مصنوعات سے شروع کریں →"}
+};
+const LANG_MAP={en:'en',hi:'hi',ta:'ta',te:'te',bn:'bn',mr:'mr',gu:'gu',kn:'kn',ml:'ml',pa:'pa',or:'or',as:'as',ur:'ur'};
+const LANG_NAMES={en:'English',hi:'हिन्दी',ta:'தமிழ்',te:'తెలుగు',bn:'বাংলা',mr:'मराठी',gu:'ગુજરાતી',kn:'ಕನ್ನಡ',ml:'മലയാളം',pa:'ਪੰਜਾਬੀ',or:'ଓଡ଼ିଆ',as:'অসমীয়া',ur:'اردو'};
+const PROTECTED=['BIS COMPASS','BIS','RAG','AI','n8n','CSV','Excel','PDF','LLM','SKU','Chennai','Pune','Delhi','IS XXXX','78%','04','06','02','01','02','03','04','05','06','✓','⚠','○','⌁','→','×','🧭','🎙'];
+const LOCAL={
+ hi:{'Portfolio':'पोर्टफोलियो','Compliance':'अनुपालन','Evidence':'साक्ष्य','Source-backed RAG':'स्रोत-समर्थित RAG','AI verification':'AI सत्यापन','Portfolio blueprints':'पोर्टफोलियो ब्लूप्रिंट','13 languages':'13 भाषाएँ','THE DIFFERENCE':'अंतर','Compliance that explains itself.':'ऐसा अनुपालन जो खुद को समझाता है।','RAG + Evidence':'RAG + साक्ष्य','AI Licence Check':'AI लाइसेंस जाँच','Blueprint Scale':'ब्लूप्रिंट स्केल','Product Builder':'उत्पाद बिल्डर','Standards + RAG':'मानक + RAG','Compliance Map':'अनुपालन मानचित्र','Evidence + Licence':'साक्ष्य + लाइसेंस','YOUR PORTFOLIO':'आपका पोर्टफोलियो','Add product +':'उत्पाद जोड़ें +','Total products':'कुल उत्पाद','Compliant':'अनुपालनित','Needs action':'कार्रवाई आवश्यक','Critical review':'महत्वपूर्ण समीक्षा','Needs review':'समीक्षा आवश्यक','Open compliance →':'अनुपालन खोलें →','PRODUCT ONBOARDING':'उत्पाद ऑनबोर्डिंग','Choose your scale.':'अपना पैमाना चुनें।','Small manufacturer · Guided form':'छोटा निर्माता · निर्देशित फ़ॉर्म','Large manufacturer · Blueprint':'बड़ा निर्माता · ब्लूप्रिंट','Manufacturer':'निर्माता','Product name':'उत्पाद का नाम','Model / SKU':'मॉडल / SKU','Factory location':'कारखाने का स्थान','Product category':'उत्पाद श्रेणी','Existing licence (optional)':'मौजूदा लाइसेंस (वैकल्पिक)','Identify product + build roadmap →':'उत्पाद पहचानें + रोडमैप बनाएँ →','MANUFACTURER BLUEPRINT':'निर्माता ब्लूप्रिंट','Electrical Appliances':'विद्युत उपकरण','Use blueprint':'ब्लूप्रिंट उपयोग करें','BULK PRODUCTS':'बल्क उत्पाद','Add many at once.':'एक साथ कई जोड़ें।','Upload CSV / Excel':'CSV / Excel अपलोड करें','No file selected':'कोई फ़ाइल चयनित नहीं','Apply blueprint to portfolio →':'पोर्टफोलियो पर ब्लूप्रिंट लागू करें →','STANDARDS INTELLIGENCE':'मानक बुद्धिमत्ता','Give COMPASS the source.':'COMPASS को स्रोत दें।','Upload BIS PDF':'BIS PDF अपलोड करें','No PDF selected':'कोई PDF चयनित नहीं','Document → chunks → retrieval → answer':'दस्तावेज़ → चंक्स → रिट्रीवल → उत्तर','1. Extract PDF text':'1. PDF टेक्स्ट निकालें','2. Split into searchable chunks':'2. खोज योग्य चंक्स में बाँटें','3. Embed into vector store':'3. वेक्टर स्टोर में एम्बेड करें','4. Retrieve relevant clauses':'4. प्रासंगिक क्लॉज़ प्राप्त करें','5. LLM answers only from retrieved evidence':'5. LLM केवल प्राप्त साक्ष्य से उत्तर देता है','ASK COMPASS':'COMPASS से पूछें','Ask COMPASS →':'COMPASS से पूछें →','COMPLIANCE MAP':'अनुपालन मानचित्र','Product identification':'उत्पाद पहचान','Applicable standard':'लागू मानक','Testing requirements':'परीक्षण आवश्यकताएँ','Documentation':'दस्तावेज़ीकरण','Licence / certification':'लाइसेंस / प्रमाणन','Final review':'अंतिम समीक्षा','EVIDENCE VAULT':'साक्ष्य वॉल्ट','Prove every requirement.':'हर आवश्यकता का प्रमाण दें।','Upload evidence':'साक्ष्य अपलोड करें','AI LICENCE CHECK':'AI लाइसेंस जाँच','Consistency review':'संगति समीक्षा','Upload licence':'लाइसेंस अपलोड करें','No licence selected':'कोई लाइसेंस चयनित नहीं','WHY THIS STANDARD?':'यह मानक क्यों?','Explainability trail':'व्याख्येयता ट्रेल','Ask why →':'क्यों पूछें →','SOURCE':'स्रोत','INTELLIGENCE LAYER':'बुद्धिमत्ता परत','One compass. Many ways to move forward.':'एक कम्पास। आगे बढ़ने के कई रास्ते।','Source first.':'पहले स्रोत।','Explain, don’t invent.':'समझाएँ, गढ़ें नहीं।','Automate the seams.':'जोड़ों को स्वचालित करें।','THE NEXT STEP':'अगला कदम','Know the rule.':'नियम जानें।','Know the evidence.':'साक्ष्य जानें।','Know where to go.':'जानें कहाँ जाना है।','Compliance Intelligence':'अनुपालन बुद्धिमत्ता','Source-backed compliance assistant':'स्रोत-समर्थित अनुपालन सहायक','Ask COMPASS...':'COMPASS से पूछें...'},
+ ta:{'Portfolio':'போர்ட்ஃபோலியோ','Compliance':'இணக்கம்','Evidence':'ஆதாரம்','13 languages':'13 மொழிகள்','THE DIFFERENCE':'வித்தியாசம்','Compliance that explains itself.':'தன்னைத்தானே விளக்கும் இணக்கம்.','RAG + Evidence':'RAG + ஆதாரம்','AI Licence Check':'AI உரிமச் சான்று சரிபார்ப்பு','Blueprint Scale':'புளூபிரிண்ட் அளவீடு','Product Builder':'தயாரிப்பு உருவாக்கி','Standards + RAG':'தரநிலைகள் + RAG','Compliance Map':'இணக்க வரைபடம்','Evidence + Licence':'ஆதாரம் + உரிமம்','YOUR PORTFOLIO':'உங்கள் போர்ட்ஃபோலியோ','Add product +':'தயாரிப்பைச் சேர்க்கவும் +','Total products':'மொத்த தயாரிப்புகள்','Compliant':'இணக்கமானது','Needs action':'நடவடிக்கை தேவை','Critical review':'முக்கியமான மதிப்பாய்வு','Needs review':'மதிப்பாய்வு தேவை','Open compliance →':'இணக்கத்தைத் திறக்கவும் →','PRODUCT ONBOARDING':'தயாரிப்பு அறிமுகம்','Choose your scale.':'உங்கள் அளவைத் தேர்ந்தெடுக்கவும்.','Small manufacturer · Guided form':'சிறு உற்பத்தியாளர் · வழிகாட்டும் படிவம்','Large manufacturer · Blueprint':'பெரிய உற்பத்தியாளர் · புளூபிரிண்ட்','Manufacturer':'உற்பத்தியாளர்','Product name':'தயாரிப்பு பெயர்','Model / SKU':'மாடல் / SKU','Factory location':'தொழிற்சாலை இடம்','Product category':'தயாரிப்பு வகை','Existing licence (optional)':'ஏற்கனவே உள்ள உரிமம் (விருப்பம்)','Identify product + build roadmap →':'தயாரிப்பை அடையாளம் கண்டு + பாதை உருவாக்கவும் →','MANUFACTURER BLUEPRINT':'உற்பத்தியாளர் புளூபிரிண்ட்','Electrical Appliances':'மின்சாதனங்கள்','Use blueprint':'புளூபிரிண்ட்டைப் பயன்படுத்தவும்','BULK PRODUCTS':'மொத்த தயாரிப்புகள்','Add many at once.':'பலவற்றை ஒரே நேரத்தில் சேர்க்கவும்.','Upload CSV / Excel':'CSV / Excel பதிவேற்றவும்','No file selected':'கோப்பு தேர்ந்தெடுக்கப்படவில்லை','Apply blueprint to portfolio →':'புளூபிரிண்ட்டை போர்ட்ஃபோலியோவுக்கு பயன்படுத்து →','STANDARDS INTELLIGENCE':'தரநிலை நுண்ணறிவு','Give COMPASS the source.':'COMPASS-க்கு மூலத்தை வழங்கவும்.','Upload BIS PDF':'BIS PDF பதிவேற்றவும்','No PDF selected':'PDF தேர்ந்தெடுக்கப்படவில்லை','ASK COMPASS':'COMPASS-ஐ கேளுங்கள்','Ask COMPASS →':'COMPASS-ஐ கேளுங்கள் →','COMPLIANCE MAP':'இணக்க வரைபடம்','Product identification':'தயாரிப்பு அடையாளம்','Applicable standard':'பொருந்தும் தரநிலை','Testing requirements':'சோதனைத் தேவைகள்','Documentation':'ஆவணப்படுத்தல்','Licence / certification':'உரிமம் / சான்றிதழ்','Final review':'இறுதி மதிப்பாய்வு','EVIDENCE VAULT':'ஆதாரக் களஞ்சியம்','Prove every requirement.':'ஒவ்வொரு தேவைக்கும் ஆதாரம் அளிக்கவும்.','Upload evidence':'ஆதாரத்தைப் பதிவேற்றவும்','AI LICENCE CHECK':'AI உரிமச் சான்று சரிபார்ப்பு','Consistency review':'ஒத்திசைவு மதிப்பாய்வு','Upload licence':'உரிமத்தைப் பதிவேற்றவும்','No licence selected':'உரிமம் தேர்ந்தெடுக்கப்படவில்லை','WHY THIS STANDARD?':'இந்த தரநிலை ஏன்?','Explainability trail':'விளக்கத் தடம்','Ask why →':'ஏன் என்று கேளுங்கள் →','SOURCE':'மூலம்','INTELLIGENCE LAYER':'நுண்ணறிவு அடுக்கு','One compass. Many ways to move forward.':'ஒரு காம்பஸ். முன்னேற பல வழிகள்.','Source first.':'முதலில் மூலம்.','Explain, don’t invent.':'விளக்குங்கள், கற்பனை செய்யாதீர்கள்.','Automate the seams.':'இணைப்புகளை தானியக்கப்படுத்துங்கள்.','THE NEXT STEP':'அடுத்த படி','Know the rule.':'விதியை அறியுங்கள்.','Know the evidence.':'ஆதாரத்தை அறியுங்கள்.','Know where to go.':'எங்கு செல்ல வேண்டும் என்பதை அறியுங்கள்.','Compliance Intelligence':'இணக்க நுண்ணறிவு','Source-backed compliance assistant':'மூல ஆதாரமுள்ள இணக்க உதவியாளர்','Ask COMPASS...':'COMPASS-ஐ கேளுங்கள்...'}
+};
+function shouldTranslateText(s){const x=s.trim(); if(!x||PROTECTED.includes(x)||/^\d+(\.\d+)?%?$/.test(x)) return false; return /[A-Za-z]/.test(x);}
+async function remoteTranslate(texts,target){
+  const out=[];
+  for(let i=0;i<texts.length;i+=8){
+    const batch=texts.slice(i,i+8), joined=batch.map((x,j)=>`[[${j}]] ${x}`).join('\n');
+    try{const u='https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl='+encodeURIComponent(target)+'&dt=t&q='+encodeURIComponent(joined);const r=await fetch(u);const a=await r.json();let z=(a[0]||[]).map(x=>x[0]).join('');const parts=z.split(/\[\[(\d+)\]\]\s*/).filter(Boolean);let m={};for(let j=0;j<parts.length-1;j+=2)m[parts[j]]=parts[j+1];batch.forEach((x,j)=>out.push(m[j]||x));}catch(e){batch.forEach(x=>out.push(x));}
+  }
+  return out;
+}
+async function changeLanguage(){
+ const code=document.getElementById('language').value||'en'; document.documentElement.lang=code; document.documentElement.dir=code==='ur'?'rtl':'ltr';
+ const nodes=[...document.body.querySelectorAll('*')].filter(e=>e.children.length===0 && e.tagName!=='SCRIPT' && e.tagName!=='STYLE' && shouldTranslateText(e.textContent));
+ const placeholders=[...document.querySelectorAll('input[placeholder],textarea[placeholder]')];
+ const raw=nodes.map(e=>e.textContent.trim()); const ph=placeholders.map(e=>e.getAttribute('placeholder'));
+ if(code==='en'){nodes.forEach(e=>{if(e.dataset.originalText)e.textContent=e.dataset.originalText});placeholders.forEach(e=>{if(e.dataset.originalPlaceholder)e.placeholder=e.dataset.originalPlaceholder});return;}
+ nodes.forEach((e,i)=>{if(!e.dataset.originalText)e.dataset.originalText=raw[i]}); placeholders.forEach((e,i)=>{if(!e.dataset.originalPlaceholder)e.dataset.originalPlaceholder=ph[i]});
+ const local=LOCAL[code]||{}; const need=raw.map(x=>local[x]||null); const missing=[...new Set(raw.filter(x=>!local[x]))];
+ const remote=missing.length?await remoteTranslate(missing,LANG_MAP[code]):[]; const map={};missing.forEach((x,i)=>map[x]=remote[i]||x);
+ nodes.forEach((e,i)=>e.textContent=need[i]||map[raw[i]]||raw[i]);
+ if(ph.length){const pm=ph.map(x=>local[x]||map[x]||x); placeholders.forEach((e,i)=>e.placeholder=pm[i]);}
+}
+
+function go(id){document.getElementById(id).scrollIntoView({behavior:'smooth'})}
+function showTab(id,btn){document.querySelectorAll('.panel').forEach(p=>p.style.display='none');document.getElementById(id).style.display='block';document.querySelectorAll('.tab').forEach(b=>b.classList.remove('active'));if(btn)btn.classList.add('active');else document.querySelectorAll('.tab')[id==='portfolio'?0:id==='product'?1:id==='standards'?2:id==='roadmap'?3:4].classList.add('active')}
+function setMode(mode){document.getElementById('smallMode').classList.toggle('selected',mode==='small');document.getElementById('largeMode').classList.toggle('selected',mode==='large');document.getElementById('smallForm').style.display=mode==='small'?'block':'none';document.getElementById('largeForm').style.display=mode==='large'?'block':'none'}
+
+async function apiFetch(url, options={}){
+  const r=await fetch(url, options);
+  const data=await r.json().catch(()=>({}));
+  if(!r.ok) throw new Error(data.error||'Request failed');
+  return data;
+}
+async function createProduct(){
+  const payload={manufacturer:document.getElementById('manufacturer').value,productName:document.getElementById('pname').value,
+    model:document.getElementById('model').value,factory:document.getElementById('factory').value,
+    category:document.getElementById('category').value,licence:document.getElementById('licence').value,mode:'small'};
+  if(!payload.productName.trim()){toast('Enter a product name first.');return}
+  try{
+    const p=await apiFetch('/api/products',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});
+    document.getElementById('roadTitle').textContent=p.name+' · Compliance roadmap';
+    toast((p.qcoMatch?'QCO match found — ':'')+p.name+' saved to MongoDB.');
+    await loadPortfolio(); showTab('roadmap');
+  }catch(e){toast('Could not save product: '+e.message)}
+}
+function selectProduct(n){document.getElementById('roadTitle').textContent=n+' · Compliance roadmap';showTab('roadmap')}
+async function pdfPicked(i){
+  const f=i.files[0]; document.getElementById('pdfName').textContent=f?f.name+' · uploading…':'No PDF selected'; if(!f)return;
+  try{const fd=new FormData();fd.append('file',f);const x=await apiFetch('/api/documents',{method:'POST',body:fd});document.getElementById('pdfName').textContent=f.name+' · stored';toast('BIS source uploaded to backend.');}
+  catch(e){document.getElementById('pdfName').textContent='Upload failed';toast('PDF upload failed: '+e.message)}
+}
+async function licencePicked(i){
+  const f=i.files[0]; document.getElementById('licenceName').textContent=f?f.name+' · uploading…':'No licence selected'; if(!f)return;
+  try{const fd=new FormData();fd.append('file',f);const x=await apiFetch('/api/licences',{method:'POST',body:fd});document.getElementById('licenceName').textContent=f.name+' · review queued';toast('Licence stored for AI-assisted review.');}
+  catch(e){document.getElementById('licenceName').textContent='Upload failed';toast('Licence upload failed: '+e.message)}
+}
+async function filePicked(i){
+  const f=i.files[0]; document.getElementById('bulkName').textContent=f?f.name+' · uploading…':'No file selected'; if(!f)return;
+  try{
+    const fd=new FormData();fd.append('file',f);
+    const x=await apiFetch('/api/import/database',{method:'POST',body:fd});
+    document.getElementById('bulkName').textContent=f.name+' · '+x.count+' records imported';
+    toast(`Imported ${x.count} records${x.qcoCount?` into QCO knowledge base`:''}.`);
+    await loadPortfolio();
+  }catch(e){document.getElementById('bulkName').textContent='Import failed';toast('Dataset import failed: '+e.message)}
+}
+async function evidencePicked(i){
+  const f=i.files[0];document.getElementById('evidenceName').textContent=f?f.name+' · uploading…':'No evidence selected';if(!f)return;
+  try{const fd=new FormData();fd.append('file',f);const x=await apiFetch('/api/evidence',{method:'POST',body:fd});document.getElementById('evidenceName').textContent=f.name+' · stored';toast('Evidence uploaded to the backend.');}
+  catch(e){document.getElementById('evidenceName').textContent='Upload failed';toast('Evidence upload failed: '+e.message)}
+}
+async function loadPortfolio(){
+  try{
+    const rows=await apiFetch('/api/products'); const list=document.getElementById('productList'); if(!list)return;
+    document.getElementById('total').textContent=rows.length;
+    if(!rows.length){list.innerHTML='<div class="product"><div class="status">No products</div><h3>Portfolio is empty</h3><div class="small">Add a product or import your database.</div></div>';return}
+    list.innerHTML=rows.slice(0,30).map(p=>`<div class="product"><div class="status">${p.status||'Needs review'}</div><h3>${escapeHtml(p.name||'Unnamed')}</h3><div class="small">${escapeHtml(p.model||'')} · ${escapeHtml(p.factory||'')}</div>${p.qcoMatch?`<div class="small" style="margin-top:7px">QCO: ${escapeHtml(p.qcoMatch.applicable_standard||'matched')}</div>`:''}<button onclick="selectProduct('${String(p.name||'').replace(/'/g,"\\\\'")}')">Open compliance →</button></div>`).join('');
+  }catch(e){console.warn(e)}
+}
+function escapeHtml(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+async function searchQco(){
+  const q=document.getElementById('qcoSearch').value.trim(); if(!q){toast('Enter a product or category.');return}
+  const box=document.getElementById('qcoResults');box.textContent='Searching…';
+  try{
+    const rows=await apiFetch('/api/qco/search?search='+encodeURIComponent(q));
+    box.innerHTML=rows.length?rows.slice(0,10).map(r=>`<div style="padding:12px 0;border-top:1px solid #ddd"><b>${escapeHtml(r.appliance_name)}</b><div class="small">${escapeHtml(r.category)} · ${escapeHtml(r.qco_reference?.applicable_standard||'')}</div><div class="small">${escapeHtml(r.notes||'')}</div></div>`).join(''):'<div class="small">No QCO matches found.</div>';
+  }catch(e){box.textContent='Search failed: '+e.message}
+}
+function toast(t){let e=document.getElementById('toast');e.textContent=t;e.style.display='block';setTimeout(()=>e.style.display='none',2800)}
+function toggleChat(){document.getElementById('chat').classList.toggle('open')}
+function openChat(q){document.getElementById('chat').classList.add('open');if(q){document.getElementById('chatinput').value=q;sendChat()}}
+function closeChat(){document.getElementById('chat').classList.remove('open')}
+function addMsg(text,cls){let b=document.getElementById('chatbody');let d=document.createElement('div');d.className='msg '+cls;d.textContent=text;b.appendChild(d);b.scrollTop=b.scrollHeight}
+async function sendChat(){
+  let i=document.getElementById('chatinput'),q=i.value.trim();if(!q)return;addMsg(q,'user');i.value='';
+  try{const x=await apiFetch('/api/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:q})});addMsg(x.answer||'No answer returned.','bot')}
+  catch(e){addMsg('Backend error: '+e.message,'bot')}
+}
+function voice(){if(!('webkitSpeechRecognition'in window||'SpeechRecognition'in window)){toast('Voice input is not supported in this browser.');return}const R=window.SpeechRecognition||window.webkitSpeechRecognition,r=new R();r.lang=document.getElementById('language').value==='hi'?'hi-IN':'en-IN';r.onresult=e=>{document.getElementById('chatinput').value=e.results[0][0].transcript;sendChat()};r.start();toast('Listening…')}
+
+// COMPASS VISION — local, demo-safe visual assessment
+const visionRules={
+  kettle:{name:'Electric Kettle',standard:'Applicable standard — demo kettle rule set',requirements:[
+    ['Product identity / model','Model or product identity visible in the image','Visible image evidence'],
+    ['Manufacturer information','Manufacturer name visible on label/packaging','Visible image evidence'],
+    ['Rated voltage','Voltage/rating visible (for example 230 V)','Visible image evidence'],
+    ['Rated power','Power/rating visible (for example 1500 W)','Visible image evidence'],
+    ['Required marking','Required conformity/marking details should be visible and legible','Visual check'],
+    ['Test report','Laboratory test report is available','Documentary evidence'],
+    ['Licence / certificate','Current licence/certificate is available and consistent','Documentary evidence']
+  ],analogy:'The photo is like checking a vehicle dashboard and number plate from the outside: you can verify what is visibly present, but you still cannot prove that the engine passed a workshop inspection. In the same way, a product image can support visible marking and identity checks, while testing and certification still need documentary evidence.'},
+  mixer:{name:'Mixer Grinder',standard:'Applicable standard — demo mixer rule set',requirements:[
+    ['Product identity / model','Model or product identity visible in the image','Visible image evidence'],['Manufacturer information','Manufacturer name visible on label/packaging','Visible image evidence'],['Electrical rating','Voltage / wattage information visible','Visible image evidence'],['Required marking','Required conformity/marking details should be visible and legible','Visual check'],['Test report','Laboratory test report is available','Documentary evidence'],['Licence / certificate','Current licence/certificate is available and consistent','Documentary evidence']
+  ],analogy:'Think of the image as the outside inspection of a machine. You can see its identity plate and visible markings, but the photograph cannot tell you whether the internal electrical and mechanical tests passed.'},
+  fan:{name:'Ceiling Fan',standard:'Applicable standard — demo fan rule set',requirements:[
+    ['Product identity / model','Model or product identity visible in the image','Visible image evidence'],['Manufacturer information','Manufacturer name visible on label/packaging','Visible image evidence'],['Electrical rating','Voltage / power information visible','Visible image evidence'],['Required marking','Required conformity/marking details should be visible and legible','Visual check'],['Test report','Laboratory test report is available','Documentary evidence'],['Licence / certificate','Current licence/certificate is available and consistent','Documentary evidence']
+  ],analogy:'This is like checking a building from the street: you can verify the visible signboard and some exterior features, but you cannot prove the strength of the structure without the underlying inspection records.'},
+  generic:{name:'Unknown / Other Product',standard:'No product-specific rule selected',requirements:[['Product identity','Identify the product and model','User / image evidence'],['Manufacturer','Identify manufacturer','User / image evidence'],['Applicable standard','Retrieve the relevant standard from the uploaded BIS corpus','RAG required'],['Testing evidence','Provide applicable laboratory/test evidence','Documentary evidence'],['Licence / certificate','Provide applicable licence/certificate','Documentary evidence']] ,analogy:'The image is a starting point, not the finish line. It can tell COMPASS what is visible, while the standards corpus and documentary evidence tell us what must actually be demonstrated.'}
+};
+let visionFileObj=null, visionObjectUrl=null;
+const vf=document.getElementById('visionFile');
+if(vf){
+  vf.addEventListener('change',()=>{
+    const f=vf.files&&vf.files[0]; visionFileObj=f||null;
+    const btn=document.getElementById('analyzeVision');
+    document.getElementById('visionReport').style.display='none'; document.getElementById('ocrBox').style.display='none';
+    if(visionObjectUrl)URL.revokeObjectURL(visionObjectUrl);
+    if(!f){document.getElementById('visionFileName').textContent='No image selected';btn.disabled=true;return;}
+    if(!f.type.startsWith('image/')){document.getElementById('visionFileName').textContent='Please choose an image file.';btn.disabled=true;return;}
+    if(f.size>15*1024*1024){document.getElementById('visionFileName').textContent='Image is too large. Please choose one under 15 MB.';btn.disabled=true;return;}
+    visionObjectUrl=URL.createObjectURL(f);const img=document.getElementById('visionPreview');img.src=visionObjectUrl;
+    img.onload=()=>{document.getElementById('visionMeta').textContent=`${img.naturalWidth} × ${img.naturalHeight}px · ${(f.size/1024/1024).toFixed(2)} MB · ${f.type}`};
+    document.getElementById('visionPreviewWrap').style.display='block';document.getElementById('visionFileName').textContent=f.name+' · ready to analyze';btn.disabled=false;
+  });
+}
+function visionEsc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+async function loadOCR(){
+  if(window.Tesseract)return true;
+  try{await new Promise((resolve,reject)=>{const sc=document.createElement('script');sc.src='https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js';sc.onload=resolve;sc.onerror=reject;document.head.appendChild(sc)});return !!window.Tesseract}catch(e){return false}
+}
+async function runOCR(file){
+  const ok=await loadOCR(); if(!ok)return '';
+  try{const r=await Tesseract.recognize(file,'eng',{logger:m=>{if(m.status&&m.progress!=null)document.getElementById('visionProgress').textContent=`Reading visible text… ${Math.round(m.progress*100)}%`}});return (r.data.text||'').trim()}catch(e){return ''}
+}
+function inferVisible(text,rule){
+  const t=(text||'').toLowerCase();
+  const hasModel=/\b(model|sku|type|no\.?|serial)\b|\b[a-z]{1,5}[- ]?\d{2,}\b/.test(t);
+  const hasMaker=/\b(pvt|ltd|limited|industries|appliances|manufacturer|mfg|made by)\b/.test(t);
+  const hasVoltage=/\b(220|230|240)\s*(v|volt|volts)\b/.test(t);
+  const hasPower=/\b\d{3,4}\s*(w|watt|watts)\b/.test(t);
+  const hasMark=/\b(isi|bis|cm\/l|standard mark|certified)\b/.test(t);
+  return {hasModel,hasMaker,hasVoltage,hasPower,hasMark};
+}
+async function analyzeVision(){
+  if(!visionFileObj)return; const btn=document.getElementById('analyzeVision');btn.disabled=true;document.getElementById('visionProgress').textContent='Preparing visual assessment…';
+  const cat=document.getElementById('visionCategory').value,rule=visionRules[cat]||visionRules.generic; const text=await runOCR(visionFileObj); const v=inferVisible(text,rule);
+  const checks=[];
+  for(const r of rule.requirements){let status='MISSING',detail=r[1];const n=r[0].toLowerCase();
+    if(n.includes('model')||n.includes('identity')){status=v.hasModel?'FOUND':'REVIEW';detail=v.hasModel?'A model/identity-like value was detected in visible text.':'No clear model/identity value was detected; inspect the label.'}
+    else if(n.includes('manufacturer')){status=v.hasMaker?'FOUND':'REVIEW';detail=v.hasMaker?'Manufacturer-related text was detected.':'No clear manufacturer name was detected.'}
+    else if(n.includes('voltage')){status=v.hasVoltage?'FOUND':'REVIEW';detail=v.hasVoltage?'A voltage rating was detected.':'No clear voltage rating was detected.'}
+    else if(n.includes('power')||n.includes('electrical rating')){status=v.hasPower||v.hasVoltage?'FOUND':'REVIEW';detail=v.hasPower?'A power rating was detected.':'Electrical rating may be present but could not be confidently extracted.'}
+    else if(n.includes('marking')){status=v.hasMark?'FOUND':'REVIEW';detail=v.hasMark?'Marking-related text was detected; visual legibility still needs review.':'No clear marking keyword was detected.'}
+    else status='MISSING';
+    checks.push({name:r[0],detail,status,kind:r[2]});
+  }
+  const found=checks.filter(x=>x.status==='FOUND').length, review=checks.filter(x=>x.status==='REVIEW').length; const score=Math.round((found*1+review*.5)/checks.length*100);
+  document.getElementById('visionTitle').textContent=rule.name+' · visual report';document.getElementById('visionScore').textContent=score+'%';
+  document.getElementById('visionSummary').textContent=`${found} visible checks found · ${review} need review · ${checks.filter(x=>x.status==='MISSING').length} documentary/evidence gaps. ${text?'OCR was available for this image.':'OCR was unavailable, so visible findings remain conservative.'}`;
+  document.getElementById('visionAnalogy').textContent=rule.analogy;
+  document.getElementById('visionSource').textContent=rule.standard+' · visual demo assessment';
+  let html='<div class="vision-row head"><div>Requirement</div><div>Finding</div><div>Result</div></div>';
+  html+=checks.map(x=>`<div class="vision-row"><div><b>${visionEsc(x.name)}</b><br><span class="small">${visionEsc(x.kind)}</span></div><div>${visionEsc(x.detail)}</div><div class="result ${x.status==='FOUND'?'good':x.status==='REVIEW'?'warn':'bad'}">${x.status}</div></div>`).join('');
+  document.getElementById('visionTable').innerHTML=html;
+  if(text){document.getElementById('ocrText').textContent=text;document.getElementById('ocrBox').style.display='block'}
+  document.getElementById('visionProgress').textContent='Assessment complete. Review the findings before treating them as evidence.';document.getElementById('visionReport').style.display='block';btn.disabled=false;
+}
+const av=document.getElementById('analyzeVision');if(av)av.addEventListener('click',analyzeVision);
+
+document.addEventListener('DOMContentLoaded',()=>{loadPortfolio();});
+
+
+let currentGraph=null;
+let graphEvidenceNames=[];
+function graphImagePicked(i){document.getElementById('graphImageName').textContent=i.files[0]?i.files[0].name:'No product image selected';}
+function graphEvidencePicked(i){graphEvidenceNames=[...i.files].map(f=>f.name);document.getElementById('graphEvidenceNames').textContent=graphEvidenceNames.length?graphEvidenceNames.join(' · '):'No evidence selected';}
+async function buildGraph(productName,category){
+  document.getElementById('graphStatus').textContent='Mapping product against the BIS/QCO knowledge base…';
+  const x=await apiFetch('/api/compliance/graph',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({productName,category,evidenceNames:graphEvidenceNames})});
+  currentGraph=x; renderGraph(x);
+  showTab('graph');
+}
+async function buildGraphFromInputs(){
+  const n=document.getElementById('graphProduct').value.trim(), c=document.getElementById('graphCategory').value.trim();
+  if(!n){toast('Enter a product name first.');return;}
+  await buildGraph(n,c);
+}
+async function loadMicrowaveDemo(){
+  document.getElementById('graphProduct').value='Microwave Oven';
+  document.getElementById('graphCategory').value='Electrical Appliance';
+  graphEvidenceNames=['Microwave_Test_Report.pdf','Product_Label.jpg'];
+  document.getElementById('graphEvidenceNames').textContent=graphEvidenceNames.join(' · ');
+  await buildGraph('Microwave Oven','Electrical Appliance');
+  toast('Microwave demo loaded — click any node.');
+}
+function graphNodeClass(status){return status==='DONE'?'done':status==='MISSING'?'missing':'review'}
+function renderGraph(g){
+  const status=document.getElementById('graphStatus');
+  if(!g.verified){status.innerHTML='<b>NO VERIFIED BIS MAPPING.</b> '+escapeHtml(g.message);document.getElementById('graphSvg').innerHTML='';document.getElementById('graphScore').textContent='—';document.getElementById('graphCounts').textContent='No fabricated IS/QCO mapping was created.';document.getElementById('graphPriorities').innerHTML='';document.getElementById('graphResources').innerHTML='';document.getElementById('graphTimeline').innerHTML='';return;}
+  const counts={DONE:g.nodes.filter(n=>n.status==='DONE').length,MISSING:g.nodes.filter(n=>n.status==='MISSING').length,REVIEW:g.nodes.filter(n=>n.status==='REVIEW').length};
+  status.innerHTML='<b>VERIFIED BIS MAPPING FOUND.</b> '+escapeHtml(g.standardTitle||g.standard||'')+' <span class="source-tag">Source-backed</span>';
+  document.getElementById('graphScore').textContent=g.readiness+'% ready';
+  document.getElementById('graphCounts').textContent=`${counts.DONE} done · ${counts.MISSING} missing · ${counts.REVIEW} review`;
+  renderSvg(g); renderPriorities(g); renderResources(g); renderTimeline(g);
+  const first=g.nodes.find(n=>n.status==='MISSING')||g.nodes[0]; if(first) selectGraphNode(first.id);
+}
+function renderSvg(g){
+  const pos={product:[110,260],standard:[330,150],qco:[560,95],testing:[560,270],documents:[330,390],marking:[560,450],scheme:[760,180],application:[760,330],final:[760,480]};
+  const svg=document.getElementById('graphSvg'); let out='';
+  g.edges.forEach(([a,b])=>{const A=pos[a],B=pos[b];if(A&&B)out+=`<line class="edge" x1="${A[0]+70}" y1="${A[1]+28}" x2="${B[0]+70}" y2="${B[1]+28}"/>`;});
+  g.nodes.forEach(n=>{const [x,y]=pos[n.id]||[100,100];const short=n.label.length>24?n.label.slice(0,23)+'…':n.label;out+=`<g class="graph-node ${graphNodeClass(n.status)}" onclick="selectGraphNode('${n.id}')"><rect x="${x}" y="${y}" width="145" height="56"></rect><text x="${x+10}" y="${y+20}">${escapeHtml(short)}</text><text class="sub" x="${x+10}" y="${y+38}">${escapeHtml(n.status)} · ${escapeHtml(n.priority)}</text></g>`;});
+  svg.innerHTML=out;
+}
+function selectGraphNode(id){if(!currentGraph)return;const n=currentGraph.nodes.find(x=>x.id===id);if(!n)return;document.getElementById('graphNodeTitle').textContent=n.label;document.getElementById('graphNodeBody').innerHTML=`<span class="status-pill status-${n.status.toLowerCase()}">${n.status}</span><br><br><b>Priority:</b> ${n.priority}<br><b>Why:</b> ${escapeHtml(n.detail)}<br><br><b>Next action:</b> ${escapeHtml(actionForGraph(n.id))}`;document.getElementById('graphNodeLink').innerHTML=n.sourceUrl?`<a class="resource-link" target="_blank" rel="noopener" href="${n.sourceUrl}">Open official BIS source →</a>`:'';}
+function actionForGraph(id){const m={standard:'Confirm the applicable Indian Standard in the official BIS source and retain the source document.',qco:'Verify the current QCO/government notification for the exact product classification.',scheme:'Identify the applicable BIS conformity-assessment route and prepare the required submission evidence.',testing:'Use BIS LIMS to locate a laboratory with the applicable IS scope, complete testing and upload the report.',documents:'Upload technical specifications, manufacturer/model details, instructions and other applicable documentary evidence.',marking:'Upload a clear label/product photograph and review visible marking/instructions against the applicable BIS requirements.',application:'Follow the official BIS application route for the applicable scheme and retain submission evidence.',final:'Resolve all P0 blockers and complete human review before claiming certification/compliance.'};return m[id]||'Review the applicable BIS source and attach evidence.';}
+function renderPriorities(g){const el=document.getElementById('graphPriorities');el.innerHTML=g.priorities.length?g.priorities.map((p,i)=>`<div class="priority-row"><div class="prio">${p.priority}</div><div><b style="font-size:11px">${escapeHtml(p.title)}</b><div style="font-size:10px;margin-top:3px">${escapeHtml(p.status)} · ${escapeHtml(p.why.slice(0,110))}${p.why.length>110?'…':''}</div></div><button class="btn" style="margin:0;padding:7px 9px" onclick="selectGraphNode('${p.id}')">View</button></div>`).join(''):'<div style="font-size:11px">No open actions.</div>';}
+function renderResources(g){document.getElementById('graphResources').innerHTML=g.resources.map(r=>`<a class="resource-link" target="_blank" rel="noopener" href="${r.url}"><b>${escapeHtml(r.title)}</b><br><span style="opacity:.75">${escapeHtml(r.kind)}</span></a>`).join('');}
+function renderTimeline(g){const t=g.timeline;document.getElementById('graphTimeline').innerHTML=`<div class="timeline-item"><div class="source-tag">01 · IDENTIFY</div><b>Product → IS</b><span>Map the product to the verified BIS standard/QCO.</span></div><div class="timeline-item"><div class="source-tag">02 · TEST</div><b>${escapeHtml(t.testing)}</b><span>Complete applicable testing through a suitable BIS lab scope.</span></div><div class="timeline-item"><div class="source-tag">03 · APPLY</div><b>${escapeHtml(t.application)}</b><span>Indicative planning estimate for the application/review path.</span></div><div class="timeline-item"><div class="source-tag">04 · READY</div><b>${escapeHtml(t.total)}</b><span>Planning estimate only; actual time depends on evidence and BIS processing.</span></div>`;}
+
+</script>
+</body>
+</html>

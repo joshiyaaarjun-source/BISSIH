@@ -1,0 +1,1811 @@
+{
+  "products": [],
+  "standards": [],
+  "licences": [],
+  "evidence": [],
+  "scans": [],
+  "chat": [],
+  "imports": [],
+  "qco_appliances": [
+    {
+      "product_id": "QCO90-001",
+      "sr_no": 1,
+      "appliance_name": "Vacuum Cleaners & Water Suction Cleaning Appliances",
+      "category": "cleaning",
+      "is_dc_battery_variant": false,
+      "notes": "Dry & wet cleaning models; domestic & commercial",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-002",
+      "sr_no": 2,
+      "appliance_name": "Spin Extractors",
+      "category": "laundry",
+      "is_dc_battery_variant": false,
+      "notes": "Laundry spin dryers",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-003",
+      "sr_no": 3,
+      "appliance_name": "Cooking Ranges, Hobs, Ovens & Similar Appliances",
+      "category": "kitchen",
+      "is_dc_battery_variant": false,
+      "notes": "Includes induction & gas-electric combos with electrical connections",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-004",
+      "sr_no": 4,
+      "appliance_name": "Electrical Shavers, Hair Clippers & Similar Appliances",
+      "category": "personal_care",
+      "is_dc_battery_variant": false,
+      "notes": "AC, DC, rechargeable types",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-005",
+      "sr_no": 5,
+      "appliance_name": "Tumbler Dryers",
+      "category": "laundry",
+      "is_dc_battery_variant": false,
+      "notes": "Domestic & commercial clothes dryers",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-006",
+      "sr_no": 6,
+      "appliance_name": "Warming Plates & Similar Appliances",
+      "category": "kitchen",
+      "is_dc_battery_variant": false,
+      "notes": "Includes buffet warmers",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-007",
+      "sr_no": 7,
+      "appliance_name": "Frying Pans, Deep Fat Fryers & Similar Appliances",
+      "category": "kitchen",
+      "is_dc_battery_variant": false,
+      "notes": "Domestic & commercial fryers",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-008",
+      "sr_no": 8,
+      "appliance_name": "Appliances for Heating Liquids",
+      "category": "kitchen",
+      "is_dc_battery_variant": false,
+      "notes": "Kettles, soup warmers, beverage heaters",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-009",
+      "sr_no": 9,
+      "appliance_name": "Massage Appliances",
+      "category": "personal_care",
+      "is_dc_battery_variant": false,
+      "notes": "Handheld, chair, foot massagers",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-010",
+      "sr_no": 10,
+      "appliance_name": "Electric Forced Convection Ovens, Steam Cookers & Steam-Convection Ovens",
+      "category": "kitchen",
+      "is_dc_battery_variant": false,
+      "notes": "Includes combi-ovens",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-011",
+      "sr_no": 11,
+      "appliance_name": "Electric Heating Tools",
+      "category": "personal_care",
+      "is_dc_battery_variant": false,
+      "notes": "Soldering irons, hair straighteners, curling tools",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-012",
+      "sr_no": 12,
+      "appliance_name": "Electric Steam Cookers",
+      "category": "kitchen",
+      "is_dc_battery_variant": false,
+      "notes": "Standalone & multifunction",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-013",
+      "sr_no": 13,
+      "appliance_name": "Insect Killers",
+      "category": "home",
+      "is_dc_battery_variant": false,
+      "notes": "Mosquito zappers, bug killers",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-014",
+      "sr_no": 14,
+      "appliance_name": "Electric Call Bells & Buzzers (Indoor)",
+      "category": "home",
+      "is_dc_battery_variant": false,
+      "notes": "Wired & wireless models",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-015",
+      "sr_no": 15,
+      "appliance_name": "Electric Water Boilers",
+      "category": "kitchen",
+      "is_dc_battery_variant": false,
+      "notes": "Tea/coffee boilers",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-016",
+      "sr_no": 16,
+      "appliance_name": "Electric Coffee Makers",
+      "category": "kitchen",
+      "is_dc_battery_variant": false,
+      "notes": "Espresso, drip, capsule machines",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-017",
+      "sr_no": 17,
+      "appliance_name": "Electric Bean Slicers",
+      "category": "kitchen",
+      "is_dc_battery_variant": false,
+      "notes": "Food processing use",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-018",
+      "sr_no": 18,
+      "appliance_name": "Electric Berry-Juice Extractors",
+      "category": "kitchen",
+      "is_dc_battery_variant": false,
+      "notes": "Commercial & domestic",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-019",
+      "sr_no": 19,
+      "appliance_name": "Electric Can Openers",
+      "category": "kitchen",
+      "is_dc_battery_variant": false,
+      "notes": "Handheld & countertop",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-020",
+      "sr_no": 20,
+      "appliance_name": "Electric Centrifugal Juicers",
+      "category": "kitchen",
+      "is_dc_battery_variant": false,
+      "notes": "High-speed juicers",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-021",
+      "sr_no": 21,
+      "appliance_name": "Electric Churns",
+      "category": "kitchen",
+      "is_dc_battery_variant": false,
+      "notes": "Dairy/milk churners",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-022",
+      "sr_no": 22,
+      "appliance_name": "Electric Citrus-Fruit Squeezers",
+      "category": "kitchen",
+      "is_dc_battery_variant": false,
+      "notes": "Manual-assist & fully electric",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-023",
+      "sr_no": 23,
+      "appliance_name": "Electric Coffee Mills (500g hopper)",
+      "category": "kitchen",
+      "is_dc_battery_variant": false,
+      "notes": "Coffee grinders",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-024",
+      "sr_no": 24,
+      "appliance_name": "Electric Cream Whippers",
+      "category": "kitchen",
+      "is_dc_battery_variant": false,
+      "notes": "Whipping & frothing devices",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-025",
+      "sr_no": 25,
+      "appliance_name": "Electric Egg Beaters",
+      "category": "kitchen",
+      "is_dc_battery_variant": false,
+      "notes": "Stand & hand mixers",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-026",
+      "sr_no": 26,
+      "appliance_name": "Electric Food Processors",
+      "category": "kitchen",
+      "is_dc_battery_variant": false,
+      "notes": "Chopping, grinding, mixing units",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-027",
+      "sr_no": 27,
+      "appliance_name": "Electric Grain Grinders (3L hopper)",
+      "category": "kitchen",
+      "is_dc_battery_variant": false,
+      "notes": "For grains & spices",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-028",
+      "sr_no": 28,
+      "appliance_name": "Electric Graters",
+      "category": "kitchen",
+      "is_dc_battery_variant": false,
+      "notes": "Cheese & vegetable graters",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-029",
+      "sr_no": 29,
+      "appliance_name": "Electric Ice-Cream Machines, including those for use in refrigerators and freezers",
+      "category": "kitchen",
+      "is_dc_battery_variant": false,
+      "notes": "Includes freezer-compatible models",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-030",
+      "sr_no": 30,
+      "appliance_name": "Electric Knife Sharpeners",
+      "category": "kitchen",
+      "is_dc_battery_variant": false,
+      "notes": "Rotary & belt sharpeners",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-031",
+      "sr_no": 31,
+      "appliance_name": "Electric Knives",
+      "category": "kitchen",
+      "is_dc_battery_variant": false,
+      "notes": "Kitchen & carving knives",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-032",
+      "sr_no": 32,
+      "appliance_name": "Electric Noodle Makers",
+      "category": "kitchen",
+      "is_dc_battery_variant": false,
+      "notes": "Pasta & noodle presses",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-033",
+      "sr_no": 33,
+      "appliance_name": "Electric Potato Peelers",
+      "category": "kitchen",
+      "is_dc_battery_variant": false,
+      "notes": "Domestic & commercial use",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-034",
+      "sr_no": 34,
+      "appliance_name": "Electric Shredders",
+      "category": "kitchen",
+      "is_dc_battery_variant": false,
+      "notes": "Food shredding machines",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-035",
+      "sr_no": 35,
+      "appliance_name": "Electric Sieving Machines",
+      "category": "kitchen",
+      "is_dc_battery_variant": false,
+      "notes": "For flour & powdered goods",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-036",
+      "sr_no": 36,
+      "appliance_name": "Slicing Machines",
+      "category": "kitchen",
+      "is_dc_battery_variant": false,
+      "notes": "Meat, bread, vegetable slicers",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-037",
+      "sr_no": 37,
+      "appliance_name": "Electric Hot Plates",
+      "category": "kitchen",
+      "is_dc_battery_variant": false,
+      "notes": "Single & double plate",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-038",
+      "sr_no": 38,
+      "appliance_name": "Single Walled Baking Ovens",
+      "category": "kitchen",
+      "is_dc_battery_variant": false,
+      "notes": "Domestic/commercial bakery ovens",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-039",
+      "sr_no": 39,
+      "appliance_name": "Low Speed Food Grinding Machines",
+      "category": "kitchen",
+      "is_dc_battery_variant": false,
+      "notes": "For spices & grains",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-040",
+      "sr_no": 40,
+      "appliance_name": "Dishwashers",
+      "category": "kitchen",
+      "is_dc_battery_variant": false,
+      "notes": "Domestic & commercial",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-041",
+      "sr_no": 41,
+      "appliance_name": "Floor Treatment Machines & Wet Scrubbing Machines",
+      "category": "cleaning",
+      "is_dc_battery_variant": false,
+      "notes": "Includes floor polishers",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-042",
+      "sr_no": 42,
+      "appliance_name": "Food Waste Disposers",
+      "category": "kitchen",
+      "is_dc_battery_variant": false,
+      "notes": "Kitchen sink disposal units",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-043",
+      "sr_no": 43,
+      "appliance_name": "Blankets, Pads, Clothing & Similar Flexible Heating Appliances",
+      "category": "comfort",
+      "is_dc_battery_variant": false,
+      "notes": "Electric blankets, heated wear",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-044",
+      "sr_no": 44,
+      "appliance_name": "Appliances for Skin Exposure to Optical Radiation",
+      "category": "personal_care",
+      "is_dc_battery_variant": false,
+      "notes": "UV therapy, tanning lamps",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-045",
+      "sr_no": 45,
+      "appliance_name": "Commercial Electric Cooking Ranges, Ovens, Hobs & Hob Elements",
+      "category": "commercial_kitchen",
+      "is_dc_battery_variant": false,
+      "notes": "Heavy-duty kitchens",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-046",
+      "sr_no": 46,
+      "appliance_name": "Commercial Electric Doughnut Fryers & Deep Fat Fryers",
+      "category": "commercial_kitchen",
+      "is_dc_battery_variant": false,
+      "notes": "Bakery & fast food equipment",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-047",
+      "sr_no": 47,
+      "appliance_name": "Commercial Electric Griddles & Griddle Grills",
+      "category": "commercial_kitchen",
+      "is_dc_battery_variant": false,
+      "notes": "Flat-top grills",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-048",
+      "sr_no": 48,
+      "appliance_name": "Commercial Electric Multi-Purpose Cooking Pans",
+      "category": "commercial_kitchen",
+      "is_dc_battery_variant": false,
+      "notes": "For soups, sauces, curries",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-049",
+      "sr_no": 49,
+      "appliance_name": "Commercial Electric Forced Convection Ovens, Steam Cookers & Steam-Convection Ovens",
+      "category": "commercial_kitchen",
+      "is_dc_battery_variant": false,
+      "notes": "Catering ovens",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-050",
+      "sr_no": 50,
+      "appliance_name": "Clothes Dryers & Towel Rails",
+      "category": "home",
+      "is_dc_battery_variant": false,
+      "notes": "Electric towel warmers",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-051",
+      "sr_no": 51,
+      "appliance_name": "Commercial Electric Boiling Pans",
+      "category": "commercial_kitchen",
+      "is_dc_battery_variant": false,
+      "notes": "Catering & food processing",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-052",
+      "sr_no": 52,
+      "appliance_name": "Commercial Electric Grillers & Toasters",
+      "category": "commercial_kitchen",
+      "is_dc_battery_variant": false,
+      "notes": "Contact & conveyor toasters",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-053",
+      "sr_no": 53,
+      "appliance_name": "Commercial Electric Appliances for Keeping Food & Crockery Warm",
+      "category": "commercial_kitchen",
+      "is_dc_battery_variant": false,
+      "notes": "Banquet warmers",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-054",
+      "sr_no": 54,
+      "appliance_name": "Commercial Electric Bains-Marie",
+      "category": "commercial_kitchen",
+      "is_dc_battery_variant": false,
+      "notes": "Buffet heating stations",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-055",
+      "sr_no": 55,
+      "appliance_name": "Oral Hygiene Appliances",
+      "category": "personal_care",
+      "is_dc_battery_variant": false,
+      "notes": "Electric toothbrushes, flossers",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-056",
+      "sr_no": 56,
+      "appliance_name": "Sauna Heating Appliances & Infrared Cabins",
+      "category": "wellness",
+      "is_dc_battery_variant": false,
+      "notes": "Wellness equipment",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-057",
+      "sr_no": 57,
+      "appliance_name": "Surface-Cleaning Appliances for Household Use Employing Liquids or Steam",
+      "category": "cleaning",
+      "is_dc_battery_variant": false,
+      "notes": "Steam mops, carpet cleaners",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-058",
+      "sr_no": 58,
+      "appliance_name": "Electrical Appliances for Use with Aquariums & Garden Ponds",
+      "category": "home",
+      "is_dc_battery_variant": false,
+      "notes": "Pumps, filters",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-059",
+      "sr_no": 59,
+      "appliance_name": "Commercial Electric Dishwashing Machines",
+      "category": "commercial_kitchen",
+      "is_dc_battery_variant": false,
+      "notes": "Industrial dishwashers",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-060",
+      "sr_no": 60,
+      "appliance_name": "Whirlpool Baths & Whirlpool Spas",
+      "category": "wellness",
+      "is_dc_battery_variant": false,
+      "notes": "Jacuzzi systems",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-061",
+      "sr_no": 61,
+      "appliance_name": "Thermal Storage Room Heaters",
+      "category": "comfort",
+      "is_dc_battery_variant": false,
+      "notes": "Night storage heaters",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-062",
+      "sr_no": 62,
+      "appliance_name": "Commercial Electric Rinsing Sinks",
+      "category": "commercial_kitchen",
+      "is_dc_battery_variant": false,
+      "notes": "Industrial sinks",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-063",
+      "sr_no": 63,
+      "appliance_name": "Commercial Electric Kitchen Machines",
+      "category": "commercial_kitchen",
+      "is_dc_battery_variant": false,
+      "notes": "Heavy-duty mixers",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-064",
+      "sr_no": 64,
+      "appliance_name": "Air-Cleaning Appliances",
+      "category": "home",
+      "is_dc_battery_variant": false,
+      "notes": "Air purifiers, ionizers",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-065",
+      "sr_no": 65,
+      "appliance_name": "Water-Bed Heaters",
+      "category": "comfort",
+      "is_dc_battery_variant": false,
+      "notes": "Heating systems for beds",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-066",
+      "sr_no": 66,
+      "appliance_name": "Fixed Immersion Heaters",
+      "category": "industrial",
+      "is_dc_battery_variant": false,
+      "notes": "Industrial tanks, boilers",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-067",
+      "sr_no": 67,
+      "appliance_name": "Outdoor Barbecues",
+      "category": "kitchen",
+      "is_dc_battery_variant": false,
+      "notes": "Electric grills",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-068",
+      "sr_no": 68,
+      "appliance_name": "Foot Warmers & Heating Mats",
+      "category": "comfort",
+      "is_dc_battery_variant": false,
+      "notes": "Home & spa",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-069",
+      "sr_no": 69,
+      "appliance_name": "Amusement Machines & Personal Service Machines",
+      "category": "misc",
+      "is_dc_battery_variant": false,
+      "notes": "Arcade & vending",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-070",
+      "sr_no": 70,
+      "appliance_name": "Toilet Appliances",
+      "category": "home",
+      "is_dc_battery_variant": false,
+      "notes": "Bidets, smart toilets",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-071",
+      "sr_no": 71,
+      "appliance_name": "Fabric Steamers",
+      "category": "cleaning",
+      "is_dc_battery_variant": false,
+      "notes": "Handheld & standing steamers",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-072",
+      "sr_no": 72,
+      "appliance_name": "Drives for Vertically Moving Garage Doors (Residential Use)",
+      "category": "home",
+      "is_dc_battery_variant": false,
+      "notes": "Motorized garage door openers",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-073",
+      "sr_no": 73,
+      "appliance_name": "Humidifiers",
+      "category": "comfort",
+      "is_dc_battery_variant": false,
+      "notes": "Cool & warm mist",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-074",
+      "sr_no": 74,
+      "appliance_name": "Commercial Electric Hoods",
+      "category": "commercial_kitchen",
+      "is_dc_battery_variant": false,
+      "notes": "Kitchen exhaust systems",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-075",
+      "sr_no": 75,
+      "appliance_name": "Vaporizers",
+      "category": "comfort",
+      "is_dc_battery_variant": false,
+      "notes": "Room vaporizers, inhalers",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-076",
+      "sr_no": 76,
+      "appliance_name": "Gas, Oil & Solid-Fuel Burning Appliances Having Electrical Connections",
+      "category": "misc",
+      "is_dc_battery_variant": false,
+      "notes": "Hybrid heating/cooking",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-077",
+      "sr_no": 77,
+      "appliance_name": "Electrolysers",
+      "category": "industrial",
+      "is_dc_battery_variant": false,
+      "notes": "Water & chemical electrolysis",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-078",
+      "sr_no": 78,
+      "appliance_name": "Beauty Care Appliances Incorporating Lasers & Intense Light Sources",
+      "category": "personal_care",
+      "is_dc_battery_variant": false,
+      "notes": "Hair removal, skin treatment",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-079",
+      "sr_no": 79,
+      "appliance_name": "Personal-e-Transporters",
+      "category": "mobility",
+      "is_dc_battery_variant": false,
+      "notes": "E-scooters, hoverboards",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-080",
+      "sr_no": 80,
+      "appliance_name": "Skin Beauty Care Appliances",
+      "category": "personal_care",
+      "is_dc_battery_variant": false,
+      "notes": "Facial massagers, skin cleaners",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-081",
+      "sr_no": 81,
+      "appliance_name": "Furniture with Electrically Motorized Parts",
+      "category": "home",
+      "is_dc_battery_variant": false,
+      "notes": "Recliners, adjustable beds",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-082",
+      "sr_no": 82,
+      "appliance_name": "Commercial Vacuum Packaging Appliances",
+      "category": "commercial_kitchen",
+      "is_dc_battery_variant": false,
+      "notes": "Food sealing equipment",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-083",
+      "sr_no": 83,
+      "appliance_name": "Hand-Held Electric Engraving Tools",
+      "category": "tools",
+      "is_dc_battery_variant": false,
+      "notes": "Hobby & industrial engravers",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-084",
+      "sr_no": 84,
+      "appliance_name": "DC Supplied / Battery-Operated Vacuum Cleaners",
+      "category": "cleaning",
+      "is_dc_battery_variant": true,
+      "notes": "Cordless models",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-085",
+      "sr_no": 85,
+      "appliance_name": "DC Supplied / Battery-Operated Shavers, Trimmers, Clippers and Similar Appliances",
+      "category": "personal_care",
+      "is_dc_battery_variant": true,
+      "notes": "Personal grooming tools",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-086",
+      "sr_no": 86,
+      "appliance_name": "DC Supplied / Battery-Operated Massage Appliances",
+      "category": "personal_care",
+      "is_dc_battery_variant": true,
+      "notes": "Portable massagers",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-087",
+      "sr_no": 87,
+      "appliance_name": "DC Supplied / Battery-Operated Blenders & Juicers",
+      "category": "kitchen",
+      "is_dc_battery_variant": true,
+      "notes": "Cordless kitchen tools",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-088",
+      "sr_no": 88,
+      "appliance_name": "DC Supplied / Battery-Operated Toothbrush & Oral Hygiene Appliances",
+      "category": "personal_care",
+      "is_dc_battery_variant": true,
+      "notes": "Portable dental care",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-089",
+      "sr_no": 89,
+      "appliance_name": "DC Supplied / Battery-Operated Foot Warmers & Heating Mats",
+      "category": "comfort",
+      "is_dc_battery_variant": true,
+      "notes": "Cordless heated mats",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    },
+    {
+      "product_id": "QCO90-090",
+      "sr_no": 90,
+      "appliance_name": "DC Supplied / Battery-Operated Air Purifiers",
+      "category": "home",
+      "is_dc_battery_variant": true,
+      "notes": "Portable air cleaners",
+      "qco_reference": {
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "international_equivalent": "IEC 60335-1:2020",
+        "qco_instrument": "S.O. 1739(E)",
+        "qco_order_name": "Safety of Household, Commercial and Similar Electrical Appliances (Quality Control) Order, 2026",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018"
+      },
+      "compliance_deadlines": {
+        "general": "2026-10-01T00:00:00.000Z",
+        "small": "2027-01-01T00:00:00.000Z",
+        "micro": "2027-04-01T00:00:00.000Z"
+      }
+    }
+  ]
+}
