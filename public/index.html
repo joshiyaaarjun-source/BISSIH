@@ -1437,7 +1437,6 @@ async function analyzeVision(){
   document.getElementById('visionTitle').textContent=rule.name+' · visual report';document.getElementById('visionScore').textContent=score+'%';
   document.getElementById('visionSummary').textContent=`${found} visible checks found · ${review} need review · ${checks.filter(x=>x.status==='MISSING').length} documentary/evidence gaps. ${text?'OCR was available for this image.':'OCR was unavailable, so visible findings remain conservative.'}`;
   document.getElementById('visionAnalogy').textContent=rule.analogy;
-  document.getElementById('visionSource').textContent=rule.standard+' · visual demo assessment';
   let html='<div class="vision-row head"><div>Requirement</div><div>Finding</div><div>Result</div></div>';
   html+=checks.map(x=>`<div class="vision-row"><div><b>${visionEsc(x.name)}</b><br><span class="small">${visionEsc(x.kind)}</span></div><div>${visionEsc(x.detail)}</div><div class="result ${x.status==='FOUND'?'good':x.status==='REVIEW'?'warn':'bad'}">${x.status}</div></div>`).join('');
   document.getElementById('visionTable').innerHTML=html;
