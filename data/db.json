@@ -1,10 +1,79 @@
 {
-  "products": [],
+  "products": [
+    {
+      "id": "7d96e3b0-cae7-427d-ac17-282df2c959f4",
+      "manufacturer": "abc",
+      "name": "oven",
+      "model": "ek-09",
+      "factory": "chennai",
+      "category": "kitchen",
+      "licence": "2345",
+      "mode": "small",
+      "status": "Needs review",
+      "readiness": 78,
+      "createdAt": "2026-09-21T07:26:38.011Z",
+      "qcoMatch": {
+        "product_id": "QCO90-063",
+        "appliance_name": "Commercial Electric Kitchen Machines",
+        "category": "commercial_kitchen",
+        "applicable_standard": "IS 302 (Part 1):2024",
+        "certification_scheme": "Scheme-I, Schedule-II, BIS (Conformity Assessment) Regulations, 2018",
+        "compliance_deadlines": {
+          "general": "2026-10-01T00:00:00.000Z",
+          "small": "2027-01-01T00:00:00.000Z",
+          "micro": "2027-04-01T00:00:00.000Z"
+        }
+      },
+      "roadmap": [
+        {
+          "name": "Product identification",
+          "status": "verified"
+        },
+        {
+          "name": "Applicable standard",
+          "status": "verified"
+        },
+        {
+          "name": "Testing requirements",
+          "status": "pending"
+        },
+        {
+          "name": "Documentation",
+          "status": "pending"
+        },
+        {
+          "name": "Licence / certification",
+          "status": "pending"
+        },
+        {
+          "name": "Final review",
+          "status": "pending"
+        }
+      ]
+    }
+  ],
   "standards": [],
   "licences": [],
-  "evidence": [],
+  "evidence": [
+    {
+      "id": "d1b1e758-ed3c-4c1a-a21e-c70b9b8e786a",
+      "name": "BIS_Compliance_Evidence_Report_Aqua_Sip.pdf",
+      "path": "2c58ff571c35596fdde33b6689ab78ee",
+      "size": 3843733,
+      "productId": null,
+      "status": "Uploaded",
+      "createdAt": "2026-09-21T08:16:14.378Z"
+    }
+  ],
   "scans": [],
-  "chat": [],
+  "chat": [
+    {
+      "id": "d071c3aa-82be-4658-a5e7-ee2f9c40e74d",
+      "question": "start recording and tell it something",
+      "answer": "I can help with QCO products, standards, evidence, licence review, scans and your compliance roadmap.",
+      "createdAt": "2026-09-21T07:30:04.493Z"
+    }
+  ],
   "imports": [],
   "qco_appliances": [
     {

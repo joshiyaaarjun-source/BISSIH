@@ -62,7 +62,705 @@ button{cursor:pointer}
 
 .graph-shell{display:grid;grid-template-columns:1.35fr .65fr;gap:2px;margin-top:25px}.graph-canvas{background:#171313;color:var(--cream);min-height:590px;padding:20px;position:relative;overflow:hidden}.graph-canvas svg{width:100%;height:550px}.graph-node{cursor:pointer}.graph-node rect{rx:10;fill:#2d353f;stroke:#637687;stroke-width:1.5}.graph-node text{fill:#fffaf7;font-size:12px;font-family:Arial}.graph-node .sub{fill:#a9b3bd;font-size:9px}.graph-node.done rect{stroke:#6fa37e}.graph-node.missing rect{stroke:#d56a6a}.graph-node.review rect{stroke:#d3a75c}.edge{stroke:#637687;stroke-width:1.5;opacity:.7}.graph-side{display:flex;flex-direction:column;gap:2px}.graph-card{padding:22px;background:var(--storm);color:var(--cream)}.graph-card.cream{background:var(--cream);color:var(--black)}.graph-card.red{background:var(--red);color:var(--cream)}.graph-card h3{font:26px Georgia;margin:0 0 10px}.status-pill{display:inline-block;padding:5px 8px;border-radius:20px;font-size:9px;letter-spacing:1px;text-transform:uppercase;border:1px solid currentColor}.status-done{color:#9fd0ad}.status-missing{color:#ffaaa6}.status-review{color:#f0cb7b}.priority-row{display:grid;grid-template-columns:48px 1fr auto;gap:10px;align-items:center;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.14)}.priority-row:last-child{border-bottom:0}.prio{font-size:9px;font-weight:700;letter-spacing:1px}.resource-link{display:block;color:inherit;text-decoration:none;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.15);font-size:11px}.resource-link:hover{text-decoration:underline}.timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;margin-top:2px}.timeline-item{padding:18px;background:var(--cream);color:var(--black)}.timeline-item:nth-child(2){background:var(--storm);color:var(--cream)}.timeline-item:nth-child(3){background:var(--red);color:var(--cream)}.timeline-item:nth-child(4){background:var(--black);color:var(--cream)}.timeline-item b{font:25px Georgia;display:block;margin:8px 0}.source-tag{font-size:9px;text-transform:uppercase;letter-spacing:1px;color:var(--convoy)}.graph-toolbar{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:16px 0}.graph-toolbar input{flex:1;min-width:220px;padding:12px;border:1px solid var(--convoy);background:transparent}.graph-toolbar .btn{margin:0}.graph-note{padding:12px;background:#f4eee9;border-left:4px solid var(--red);font-size:11px;line-height:1.6;margin-top:15px}
 @media(max-width:900px){.graph-shell{grid-template-columns:1fr}.timeline{grid-template-columns:1fr 1fr}.hero{grid-template-columns:1fr}.grid3,.products,.roadmap{grid-template-columns:1fr}.strip{grid-template-columns:1fr 1fr}.formgrid{grid-template-columns:1fr}}
+/* =========================================================
+   BIS COMPASS — OPENING LANDING PAGE
+   ========================================================= */
 
+.landing {
+    min-height: 100vh;
+    width: 100%;
+    box-sizing: border-box;
+
+    background: var(--black);
+    color: var(--cream);
+
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 1px minmax(360px, 0.75fr);
+
+    padding: 54px 7vw;
+
+    align-items: stretch;
+}
+
+/* LEFT SIDE */
+
+.landing-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding-right: 8vw;
+}
+
+.landing-eyebrow {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--cream);
+    font-weight: 700;
+
+    margin-bottom: 42px;
+}
+
+.landing-left h1 {
+    margin: 0;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(52px, 5vw, 76px);
+    line-height: 1.02;
+    font-weight: 500;
+    letter-spacing: -1.5px;
+
+    color: var(--cream);
+}
+
+.landing-left p {
+    max-width: 680px;
+
+    margin: 44px 0 0;
+
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.7;
+
+    color: var(--convoy);
+}
+
+.landing-start {
+    width: max-content;
+
+    margin-top: 32px;
+    padding: 14px 20px;
+
+    border: 1px solid var(--convoy);
+    background: transparent;
+
+    color: var(--cream);
+
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition:
+        background .2s ease,
+        color .2s ease,
+        border-color .2s ease;
+}
+
+.landing-start:hover {
+    background: var(--cream);
+    color: var(--black);
+    border-color: var(--cream);
+}
+
+
+/* DIVIDER */
+
+.landing-divider {
+    width: 1px;
+    height: 100%;
+
+    background: var(--convoy);
+
+    opacity: .65;
+}
+
+
+/* RIGHT SIDE */
+
+.landing-right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding-left: 7vw;
+}
+
+.landing-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    max-width: 390px;
+}
+
+/* YOUR ACTUAL BIS COMPASS LOGO */
+
+.landing-logo {
+    display: block;
+
+    width: min(300px, 70%);
+    height: auto;
+
+    object-fit: contain;
+
+    margin-bottom: 26px;
+}
+
+
+/* Text underneath logo */
+
+.landing-brand-text {
+    font-size: 11px;
+    line-height: 2.2;
+
+    letter-spacing: 2.4px;
+    text-transform: uppercase;
+
+    color: var(--cream);
+}
+
+
+/* Hide the normal feature strip from immediately after
+   the opening screen */
+
+.landing + .strip {
+    display: none;
+}
+
+
+/* =========================================================
+   NAVIGATION
+   Keep it hidden while the opening page is visible.
+   JavaScript below will reveal it after scrolling.
+   ========================================================= */
+
+.nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    transform: translateY(-100%);
+
+    transition: transform .3s ease;
+
+    z-index: 500;
+}
+
+.nav.nav-visible {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .landing {
+        min-height: 100vh;
+
+        grid-template-columns: 1fr;
+
+        padding: 70px 8vw 50px;
+
+        gap: 45px;
+    }
+
+    .landing-left {
+        padding-right: 0;
+    }
+
+    .landing-eyebrow {
+        margin-bottom: 28px;
+    }
+
+    .landing-left h1 {
+        font-size: clamp(42px, 11vw, 62px);
+    }
+
+    .landing-left p {
+        margin-top: 28px;
+    }
+
+    .landing-divider {
+        width: 100%;
+        height: 1px;
+    }
+
+    .landing-right {
+        padding-left: 0;
+    }
+
+    .landing-logo {
+        width: min(250px, 70vw);
+    }
+}
+  /* =========================================================
+   REQUIREMENTS / USER INPUT EXPERIENCE
+   ========================================================= */
+
+.section-head {
+    max-width: 900px;
+    margin-bottom: 42px;
+}
+
+.section-head .eyebrow {
+    margin-bottom: 14px;
+}
+
+.section-head h2 {
+    margin: 0 0 18px;
+    font: 52px/1.05 Georgia, serif;
+    color: var(--ink);
+    letter-spacing: -1px;
+}
+
+.section-head .lead {
+    max-width: 760px;
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--muted);
+}
+
+
+/* Intro cards */
+
+.requirements-intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    margin-bottom: 28px;
+    border: 1px solid var(--line);
+}
+
+.requirements-card {
+    display: flex;
+    gap: 22px;
+    padding: 28px;
+    background: var(--cream);
+}
+
+.requirements-icon {
+    flex: 0 0 auto;
+    font: 28px Georgia, serif;
+    color: var(--red);
+}
+
+.requirements-card h3 {
+    margin: 0 0 8px;
+    font: 25px Georgia, serif;
+    color: var(--ink);
+}
+
+.requirements-card p {
+    margin: 0;
+    max-width: 440px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--muted);
+}
+
+
+/* Product input */
+
+.product-inputs {
+    display: flex;
+    gap: 14px;
+    align-items: end;
+    margin-bottom: 22px;
+}
+
+.input-group {
+    flex: 1;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.input-group input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 16px 18px;
+    border: 1px solid var(--line);
+    background: white;
+    color: var(--ink);
+    font: 15px Arial, sans-serif;
+    outline: none;
+}
+
+.input-group input:focus {
+    border-color: var(--red);
+}
+
+
+/* Upload cards */
+
+.upload-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.upload-card {
+    min-height: 235px;
+    padding: 28px;
+    border: 1px dashed var(--line);
+    background: rgba(255,255,255,.35);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.upload-label {
+    margin-bottom: 14px;
+    font-size: 10px;
+    letter-spacing: 1.7px;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.upload-card h3 {
+    margin: 0 0 10px;
+    font: 27px Georgia, serif;
+    color: var(--ink);
+}
+
+.upload-card p {
+    margin: 0 0 22px;
+    max-width: 520px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--muted);
+}
+
+.upload-button {
+    display: inline-flex;
+    width: fit-content;
+    padding: 13px 18px;
+    background: var(--ink);
+    color: var(--cream);
+    cursor: pointer;
+    font-size: 11px;
+    letter-spacing: 1.3px;
+    text-transform: uppercase;
+    transition: .2s ease;
+}
+
+.upload-button:hover {
+    background: var(--red);
+}
+
+.upload-file-name {
+    margin-top: 12px;
+    font-size: 12px;
+    color: var(--muted);
+}
+
+
+/* Bottom reassurance */
+
+.requirements-note {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 22px;
+    padding: 16px 18px;
+    border-left: 3px solid var(--red);
+    background: rgba(0,0,0,.04);
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.requirements-note strong {
+    color: var(--ink);
+}
+
+.requirements-note span {
+    color: var(--muted);
+}
+
+
+/* Responsive */
+
+@media (max-width: 800px) {
+
+    .requirements-intro,
+    .upload-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-inputs {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .section-head h2 {
+        font-size: 40px;
+    }
+
+    .requirements-note {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+} 
+/* =========================================================
+   BIS COMPASS — FINAL END PAGE
+   ========================================================= */
+
+.final-page {
+    min-height: 620px;
+    background: var(--black);
+    color: var(--cream);
+
+    padding: 95px 7vw 85px;
+
+    display: grid;
+    grid-template-columns: 1.15fr 1px .85fr;
+    gap: 0;
+
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* LEFT */
+
+.final-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding-right: 8vw;
+}
+
+.final-eyebrow {
+    font-size: 10px;
+    letter-spacing: 2.2px;
+    text-transform: uppercase;
+    color: var(--convoy);
+
+    margin-bottom: 25px;
+}
+
+.final-page h2 {
+    margin: 0;
+
+    max-width: 720px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: clamp(48px, 5vw, 72px);
+    line-height: 1.04;
+    font-weight: 500;
+    letter-spacing: -1px;
+
+    color: var(--cream);
+}
+
+.final-page .final-description {
+    max-width: 610px;
+
+    margin: 30px 0 0;
+
+    color: var(--convoy);
+
+    font-size: 15px;
+    line-height: 1.75;
+}
+
+
+/* ACTIONS */
+
+.final-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+
+    margin-top: 34px;
+}
+
+.final-action {
+    border: 1px solid var(--convoy);
+    background: transparent;
+
+    color: var(--cream);
+
+    padding: 14px 19px;
+
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    transition:
+        background .2s ease,
+        color .2s ease,
+        border-color .2s ease;
+}
+
+.final-action:hover {
+    background: var(--cream);
+    color: var(--black);
+    border-color: var(--cream);
+}
+
+.final-action.primary {
+    background: var(--red);
+    border-color: var(--red);
+    color: var(--cream);
+}
+
+.final-action.primary:hover {
+    background: #c40a0a;
+    border-color: #c40a0a;
+}
+
+
+/* DIVIDER */
+
+.final-divider {
+    width: 1px;
+    height: 100%;
+
+    background: var(--convoy);
+
+    opacity: .65;
+}
+
+
+/* RIGHT */
+
+.final-brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding-left: 6vw;
+
+    text-align: center;
+}
+
+.final-logo {
+    display: block;
+
+    width: min(270px, 70%);
+
+    height: auto;
+
+    object-fit: contain;
+
+    margin-bottom: 28px;
+}
+
+.final-brand-name {
+    font-size: 11px;
+    line-height: 2.2;
+
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+
+    color: var(--cream);
+}
+
+.final-brand-sub {
+    margin-top: 16px;
+
+    max-width: 260px;
+
+    font-size: 10px;
+    line-height: 1.7;
+
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    color: var(--convoy);
+}
+
+
+/* SMALL BOTTOM LINE */
+
+.final-bottom {
+    position: absolute;
+
+    left: 7vw;
+    right: 7vw;
+    bottom: 28px;
+
+    padding-top: 16px;
+
+    border-top: 1px solid rgba(99,118,135,.45);
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-size: 9px;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+
+    color: var(--convoy);
+}
+
+.final-bottom span:last-child {
+    color: var(--cream);
+}
+
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+
+    .final-page {
+        min-height: auto;
+
+        grid-template-columns: 1fr;
+
+        padding: 75px 8vw 90px;
+
+        gap: 55px;
+    }
+
+    .final-content {
+        padding-right: 0;
+    }
+
+    .final-page h2 {
+        font-size: clamp(42px, 11vw, 60px);
+    }
+
+    .final-divider {
+        width: 100%;
+        height: 1px;
+    }
+
+    .final-brand {
+        padding-left: 0;
+    }
+
+    .final-logo {
+        width: min(240px, 65vw);
+    }
+
+    .final-bottom {
+        position: static;
+
+        margin-top: 20px;
+
+        padding-top: 18px;
+
+        flex-direction: column;
+        align-items: flex-start;
+
+        gap: 8px;
+    }
+}
 </style>
 </head>
 <body>
@@ -81,43 +779,54 @@ button{cursor:pointer}
   </div>
 </nav>
 
-<section class="hero">
-  <div class="hero-left">
-    <div class="eyebrow" data-i18n="eyebrow">BIS COMPLIANCE INTELLIGENCE</div>
-    <h1 data-i18n="heroTitle">Every product.<br>One state of truth.</h1>
-    <div class="rule"></div>
-    <p class="lead" data-i18n="heroText">Identify applicable Indian Standards, build a source-backed compliance roadmap, verify documents with AI, and manage an entire product portfolio from one intelligent compass.</p>
-    <button class="btn" onclick="go('workspace')" data-i18n="start">Start with a product →</button>
-  </div>
-  <div class="hero-right">
-    <div class="snapshot">
-      <div class="top"><div><div class="eyebrow" style="color:var(--cream)">LIVE COMPLIANCE SNAPSHOT</div><strong style="font:26px Georgia">Electric Kettle</strong></div><div class="badge">Evidence<br>Backed</div></div>
-      <div class="metric">78%</div><div style="font-size:11px;text-transform:uppercase;letter-spacing:1.5px">Portfolio readiness</div>
-      <p>2 evidence gaps · 1 review required · 4 source-backed requirements</p>
-      <div class="minirow"><div><strong>04</strong><span>Sources</span></div><div><strong>06</strong><span>Stages</span></div><div><strong>02</strong><span>Alerts</span></div></div>
+<section class="landing" id="landing">
+    <div class="landing-left">
+        <div class="landing-eyebrow">THE NEXT STEP</div>
+
+        <h1>
+            Know the rule.<br>
+            Know the evidence.<br>
+            Know where to go.
+        </h1>
+
+        <p>
+            BIS COMPASS turns scattered compliance information into a
+            navigable, explainable workflow for manufacturers and consumers.
+        </p>
+
+        <button class="landing-start" onclick="go('workspace')" data-i18n="start">
+            Start with what you have →
+        </button>
     </div>
-  </div>
+
+    <div class="landing-divider"></div>
+
+    <div class="landing-right">
+        <div class="landing-brand">
+            <img
+                src="/assets/bis-compass-logo.png"
+                alt="BIS COMPASS"
+                class="landing-logo"
+            >
+
+            <div class="landing-brand-text">
+                <div>BIS COMPASS</div>
+                <div>COMPLIANCE INTELLIGENCE</div>
+            </div>
+        </div>
+    </div>
 </section>
 
 <div class="strip">
-  <div><span class="icon">⌁</span> Source-backed RAG</div><div><span class="icon">◌</span> AI verification</div><div><span class="icon">◇</span> Portfolio blueprints</div><div><span class="icon">◎</span> 13 languages</div>
+  <div><span class="icon">⌁</span> Evidence</div><div><span class="icon">◌</span> AI verification</div><div><span class="icon">◇</span> Portfolio blueprints</div><div><span class="icon">◎</span> 13 languages</div>
 </div>
-
-<section class="section cream" id="features">
-  <div class="sectionhead"><div class="eyebrow">THE DIFFERENCE</div><h2>Compliance that explains itself.</h2></div>
-  <div class="grid3">
-    <div class="card storm"><div class="big">01</div><div><h3>RAG + Evidence</h3><div class="small" style="color:var(--cream)">Answers are tied to uploaded BIS PDFs, standards and clauses instead of unsupported model memory.</div></div></div>
-    <div class="card red"><div class="big">02</div><div><h3>AI Licence Check</h3><div class="small" style="color:var(--cream)">Extract licence fields and compare manufacturer, product, standard, scope and validity for review.</div></div></div>
-    <div class="card cream"><div class="big">03</div><div><h3>Blueprint Scale</h3><div class="small">Set common manufacturer information once, then create hundreds of products from the same blueprint.</div></div></div>
-  </div>
-</section>
 
 <section class="app" id="workspace">
   <div class="appnav">
     <button class="tab active" onclick="showTab('portfolio',this)">Portfolio</button>
     <button class="tab" onclick="showTab('product',this)">Product Builder</button>
      <button class="tab" onclick="showTab('vision',this)">Compass Vision</button>
-    <button class="tab" onclick="showTab('standards',this)">Standards + RAG</button>
+    <button class="tab" onclick="showTab('standards',this)">Standards</button>
     <button class="tab" onclick="showTab('graph',this)">Knowledge Graph</button>
     <button class="tab" onclick="showTab('roadmap',this)">Compliance Map</button>
     <button class="tab" onclick="showTab('evidence',this)">Evidence + Licence</button>
@@ -180,7 +889,9 @@ button{cursor:pointer}
       </div>
       <div class="box">
         <div class="eyebrow" style="color:var(--cream)">02 · VISUAL INTELLIGENCE</div>
-        <h3 style="font:31px Georgia;margin:0 0 10px">Image → OCR → comparison → report</h3>
+        <h3 style="font:31px Georgia;margin:0 0 10px">
+          What COMPASS checks
+        </h3>
         <div class="source">A. Read visible text from the image<br>B. Identify product context<br>C. Compare visible fields with requirements<br>D. Separate visible evidence from missing documentary evidence<br>E. Explain the result in plain language<br>F. Produce a full-scale review trail</div>
         <div id="ocrBox" class="ocr-box" style="display:none"><b>OCR text</b><pre id="ocrText"></pre></div>
       </div>
@@ -192,7 +903,14 @@ button{cursor:pointer}
         <div class="box cream"><div class="eyebrow">THE ANALOGY</div><h3 style="font:28px Georgia;margin:0 0 8px">Think of it like a vehicle inspection.</h3><p id="visionAnalogy" style="font-size:12px;line-height:1.7"></p></div>
         <div class="box red"><div class="eyebrow" style="color:var(--cream)">WHAT THIS DOES NOT PROVE</div><h3 style="font:28px Georgia;margin:0 0 8px">A photograph is evidence, not certification.</h3><p style="font-size:12px;line-height:1.7">A visual scan can identify visible information and flag gaps. It cannot prove laboratory testing, factory controls, or formal BIS certification.</p></div>
       </div>
-      <div class="box" style="margin-top:2px"><div class="eyebrow" style="color:var(--cream)">SOURCE / TRACE</div><h3 style="font:28px Georgia;margin:0 0 8px" id="visionSource">Demo rule set · connect your uploaded BIS PDF/RAG corpus for production citations.</h3><p class="small" style="color:var(--cream)">The demo keeps visible findings, missing evidence and human-review boundaries separate. Replace the demo rules with your approved BIS corpus/RAG retrieval layer before using this for real compliance decisions.</p></div>
+      <div class="eyebrow">EVIDENCE</div>
+
+<h3>Why this result?</h3>
+
+<p class="small">
+    Review the evidence used to support this finding and
+    see anything that still needs verification.
+</p>
     </div>
   </div>
 
@@ -213,7 +931,147 @@ button{cursor:pointer}
 
   
   <div class="panel" id="graph" style="display:none">
-    <div class="panelhead"><div><div class="eyebrow">BIS KNOWLEDGE GRAPH</div><h2>From product to certification.</h2><p class="small">The graph is driven by the bundled 90-product BIS/QCO dataset. Verified BIS mappings are shown as regulatory facts; unknown products are never assigned a fabricated IS/QCO number.</p></div><button class="btn" onclick="loadMicrowaveDemo()">Load microwave demo →</button></div>
+    <div class="section-head">
+    <div class="eyebrow">UNDERSTAND YOUR REQUIREMENTS</div>
+
+    <h2>See what applies to your product.</h2>
+
+    <p class="lead">
+        Upload whatever information you already have.
+        You don't need to know the applicable standard beforehand.
+        COMPASS will use the information available to identify
+        relevant requirements and highlight what needs attention.
+    </p>
+</div>
+<div class="requirements-intro">
+
+    <div class="requirements-card">
+        <div class="requirements-icon">01</div>
+
+        <div>
+            <h3>Start with what you have.</h3>
+
+            <p>
+                You can provide a product image, product details,
+                certificates, test reports, licences, standards,
+                or any other supporting evidence.
+            </p>
+        </div>
+    </div>
+
+    <div class="requirements-card">
+        <div class="requirements-icon">02</div>
+
+        <div>
+            <h3>No perfect submission required.</h3>
+
+            <p>
+                If you don't have everything, that's okay.
+                COMPASS can work with the information available
+                and show you what is missing or needs review.
+            </p>
+        </div>
+    </div>
+
+</div>
+
+<div class="product-inputs">
+
+    <div class="input-group">
+        <label for="productName">
+            PRODUCT
+        </label>
+
+        <input
+            id="productName"
+            type="text"
+            placeholder="Enter a product name, model, or category"
+        >
+    </div>
+
+    <button
+        class="primary-btn"
+        onclick="buildGraph()"
+    >
+        CHECK REQUIREMENTS →
+    </button>
+
+</div>
+
+<div class="upload-grid">
+
+    <div class="upload-card">
+        <div class="upload-label">
+            PRODUCT INFORMATION
+        </div>
+
+        <h3>Upload a product image</h3>
+
+        <p>
+            Upload a photo of the product, label, packaging,
+            or any visible product information.
+        </p>
+
+        <label class="upload-button">
+            UPLOAD PRODUCT IMAGE
+            <input
+                type="file"
+                id="productImage"
+                accept="image/*"
+                hidden
+            >
+        </label>
+
+        <div
+            id="productImageName"
+            class="upload-file-name"
+        >
+        </div>
+    </div>
+
+
+    <div class="upload-card">
+        <div class="upload-label">
+            DOCUMENTS & EVIDENCE
+        </div>
+
+        <h3>Upload whatever documents you have</h3>
+
+        <p>
+            Certificates, test reports, licences, BIS standards,
+            specifications, or other supporting documents.
+        </p>
+
+        <label class="upload-button">
+            UPLOAD DOCUMENTS
+            <input
+                type="file"
+                id="evidenceFiles"
+                accept=".pdf,.doc,.docx,.xls,.xlsx,.png,.jpg,.jpeg"
+                multiple
+                hidden
+            >
+        </label>
+
+        <div
+            id="evidenceFileNames"
+            class="upload-file-name"
+        >
+        </div>
+    </div>
+
+</div>
+
+<div class="requirements-note">
+
+    <strong>You can start with just one thing.</strong>
+
+    <span>
+        COMPASS will use the information you provide
+        and tell you what to review next.
+    </span>
+
+</div>
     <div class="graph-toolbar">
       <input id="graphProduct" placeholder="Product name — e.g. Microwave Oven, Electric Kettle, Electric Grain Grinder">
       <input id="graphCategory" placeholder="Category — e.g. Electrical Appliance">
@@ -264,23 +1122,103 @@ button{cursor:pointer}
     </div>
     <div class="evidence">
       <div class="box cream"><div class="eyebrow">WHY THIS STANDARD?</div><h3 style="font:28px Georgia;margin:0">Explainability trail</h3><p style="font-size:12px;line-height:1.6">Product category → retrieved BIS document → relevant clause → requirement → evidence requested.</p><button class="btn" onclick="openChat('Why is this standard applicable?')">Ask why →</button></div>
-      <div class="box"><div class="eyebrow" style="color:var(--cream)">SOURCE</div><h3 style="font:28px Georgia;margin:0">IS XXXX · Clause 6.3</h3><p style="font-size:12px;line-height:1.6;color:var(--cream)">Demo source citation. Connect your official BIS corpus/RAG pipeline for production evidence.</p></div>
+      <div class="box">
+    <div class="eyebrow" style="color:var(--cream)">
+        HOW COMPASS HELPS
+    </div>
+
+    <h3 style="font:31px Georgia;margin:0">
+        Find the requirements that matter.
+    </h3>
+
+    <div class="source">
+        Your documents are used to identify relevant requirements
+        and explain what evidence you may still need.
+    </div>
+</div>
     </div>
   </div>
 </section>
 
-<section class="section dark">
-  <div class="sectionhead"><div class="eyebrow">INTELLIGENCE LAYER</div><h2>One compass. Many ways to move forward.</h2></div>
-  <div class="grid3">
-    <div class="card cream"><div class="big">RAG</div><div><h3>Source first.</h3><div class="small">Retrieve the evidence before generating an answer.</div></div></div>
-    <div class="card storm"><div class="big">AI</div><div><h3>Explain, don't invent.</h3><div class="small" style="color:var(--cream)">Show confidence, sources, missing evidence and human-review boundaries.</div></div></div>
-    <div class="card red"><div class="big">n8n</div><div><h3>Automate the seams.</h3><div class="small" style="color:var(--cream)">Route onboarding, CRM updates, alerts and follow-ups without making automation the product.</div></div></div>
-  </div>
-</section>
+<!-- =========================================================
+     BIS COMPASS — FINAL END PAGE
+     ========================================================= -->
 
-<section class="footer">
-  <div><div class="eyebrow" style="color:var(--cream)">THE NEXT STEP</div><h2>Know the rule.<br>Know the evidence.<br>Know where to go.</h2><p style="color:var(--convoy);max-width:600px;line-height:1.7">BIS COMPASS turns scattered compliance information into a navigable, explainable workflow for manufacturers and consumers.</p></div>
-  <div class="mark">BIS COMPASS<br><br>Compliance Intelligence</div>
+<section class="final-page" id="finalPage">
+
+    <div class="final-content">
+
+        <div class="final-eyebrow">
+            YOUR NEXT MOVE
+        </div>
+
+        <h2>
+            Clearer evidence.
+            <br>
+            Clearer decisions.
+        </h2>
+
+        <p class="final-description">
+            COMPASS brings the information you have into one place,
+            helps you understand what applies, and shows you what
+            still needs attention.
+        </p>
+
+        <div class="final-actions">
+
+            <button
+                class="final-action primary"
+                onclick="go('workspace')"
+            >
+                Start another assessment →
+            </button>
+
+            <button
+                class="final-action"
+                onclick="openChat()"
+            >
+                Ask COMPASS
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="final-divider"></div>
+
+
+    <div class="final-brand">
+
+        <img
+            src="/assets/bis-compass-logo.png"
+            alt="BIS COMPASS"
+            class="final-logo"
+        >
+
+        <div class="final-brand-name">
+            BIS COMPASS
+        </div>
+
+        <div class="final-brand-sub">
+            Insight · Action · Impact
+        </div>
+
+    </div>
+
+
+    <div class="final-bottom">
+
+        <span>
+            BIS COMPASS · COMPLIANCE INTELLIGENCE
+        </span>
+
+        <span>
+            Know what matters next.
+        </span>
+
+    </div>
+
 </section>
 
 <div class="chat" id="chat">
