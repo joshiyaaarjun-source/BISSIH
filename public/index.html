@@ -226,8 +226,6 @@ button{cursor:pointer}
 
 /* =========================================================
    NAVIGATION
-   Keep it hidden while the opening page is visible.
-   JavaScript below will reveal it after scrolling.
    ========================================================= */
 
 .nav {
@@ -236,15 +234,11 @@ button{cursor:pointer}
     left: 0;
     right: 0;
 
-    transform: translateY(-100%);
+    transform: translateY(0);
 
     transition: transform .3s ease;
 
     z-index: 500;
-}
-
-.nav.nav-visible {
-    transform: translateY(0);
 }
 
 
