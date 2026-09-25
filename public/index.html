@@ -1264,26 +1264,19 @@ const LOCAL={
 };
 function shouldTranslateText(s){const x=s.trim(); if(!x||PROTECTED.includes(x)||/^\d+(\.\d+)?%?$/.test(x)) return false; return /[A-Za-z]/.test(x);}
 async function remoteTranslate(texts, target) {
-
   const results = [];
 
   for (const text of texts) {
-
     try {
-
       const response = await fetch('/api/translate', {
-
         method: 'POST',
-
         headers: {
           'Content-Type': 'application/json'
         },
-
         body: JSON.stringify({
-          text: text,
-          target: target
+          text,
+          target
         })
-
       });
 
       const data = await response.json();
@@ -1293,18 +1286,10 @@ async function remoteTranslate(texts, target) {
         continue;
       }
 
-      results.push(
-        data.translatedText || text
-      );
+      results.push(data.translatedText || text);
 
     } catch (error) {
-
-      console.warn(
-        'Translation failed:',
-        text,
-        error
-      );
-
+      console.warn('Translation failed:', error);
       results.push(text);
     }
   }
@@ -1312,206 +1297,111 @@ async function remoteTranslate(texts, target) {
   return results;
 }
 async function changeLanguage() {
-
-  const code =
-    document.getElementById('language').value || 'en';
+  const code = document.getElementById('language').value || 'en';
 
   document.documentElement.lang = code;
+  document.documentElement.dir = code === 'ur' ? 'rtl' : 'ltr';
 
-  document.documentElement.dir =
-    code === 'ur' ? 'rtl' : 'ltr';
-
-  const nodes = [
-    ...document.body.querySelectorAll('*')
-  ].filter(e =>
-    e.children.length === 0 &&
-    e.tagName !== 'SCRIPT' &&
-    e.tagName !== 'STYLE' &&
-    shouldTranslateText(e.textContent)
-  );
+  const nodes = [...document.body.querySelectorAll('*')]
+    .filter(e =>
+      e.children.length === 0 &&
+      e.tagName !== 'SCRIPT' &&
+      e.tagName !== 'STYLE' &&
+      shouldTranslateText(e.textContent)
+    );
 
   const placeholders = [
-    ...document.querySelectorAll(
-      'input[placeholder], textarea[placeholder]'
-    )
+    ...document.querySelectorAll('input[placeholder], textarea[placeholder]')
   ];
 
-  // Remember original English text
+  // Save original English text
   nodes.forEach(e => {
-
     if (!e.dataset.originalText) {
-      e.dataset.originalText =
-        e.textContent.trim();
+      e.dataset.originalText = e.textContent.trim();
     }
-
   });
 
   placeholders.forEach(e => {
-
     if (!e.dataset.originalPlaceholder) {
-      e.dataset.originalPlaceholder =
-        e.getAttribute('placeholder');
+      e.dataset.originalPlaceholder = e.getAttribute('placeholder');
     }
-
   });
 
-  // -------------------------
-  // SWITCH BACK TO ENGLISH
-  // -------------------------
-
+  // English
   if (code === 'en') {
-
     nodes.forEach(e => {
-      e.textContent =
-        e.dataset.originalText;
+      e.textContent = e.dataset.originalText;
     });
 
     placeholders.forEach(e => {
-      e.placeholder =
-        e.dataset.originalPlaceholder;
+      e.placeholder = e.dataset.originalPlaceholder;
     });
 
     return;
   }
 
-  const local =
-    LOCAL[code] || {};
+  const local = LOCAL[code] || {};
 
-  // -------------------------
-  // APPLY LOCAL TRANSLATIONS
-  // IMMEDIATELY
-  // -------------------------
-
+  // Apply existing local translations immediately
   nodes.forEach(e => {
-
-    const original =
-      e.dataset.originalText;
+    const original = e.dataset.originalText;
 
     if (local[original]) {
-      e.textContent =
-        local[original];
+      e.textContent = local[original];
     }
-
   });
 
   placeholders.forEach(e => {
-
-    const original =
-      e.dataset.originalPlaceholder;
+    const original = e.dataset.originalPlaceholder;
 
     if (local[original]) {
-      e.placeholder =
-        local[original];
+      e.placeholder = local[original];
     }
-
   });
 
-  // -------------------------
-  // FIND EVERYTHING ELSE
-  // -------------------------
+  // Find text that still needs translation
+  const missingNodes = nodes.filter(e => {
+    const original = e.dataset.originalText;
+    return !local[original];
+  });
 
-  const missing = [
-    ...new Set(
-      nodes
-        .map(e => e.dataset.originalText)
-        .filter(text =>
-          text &&
-          !local[text]
-        )
-    )
-  ];
+  const missingTexts = missingNodes.map(
+    e => e.dataset.originalText
+  );
 
-  const missingPlaceholders = [
-    ...new Set(
-      placeholders
-        .map(e =>
-          e.dataset.originalPlaceholder
-        )
-        .filter(text =>
-          text &&
-          !local[text]
-        )
-    )
-  ];
+  // Translate remaining text through backend
+  if (missingTexts.length) {
+    const translated = await remoteTranslate(
+      missingTexts,
+      code
+    );
 
-  // -------------------------
-  // TRANSLATE MISSING TEXT
-  // -------------------------
-
-  if (missing.length) {
-
-    const translated =
-      await remoteTranslate(
-        missing,
-        code
-      );
-
-    const translationMap = {};
-
-    missing.forEach((text, i) => {
-
-      translationMap[text] =
-        translated[i] || text;
-
+    missingNodes.forEach((e, i) => {
+      e.textContent = translated[i] || e.dataset.originalText;
     });
-
-    nodes.forEach(e => {
-
-      const original =
-        e.dataset.originalText;
-
-      if (
-        !local[original] &&
-        translationMap[original]
-      ) {
-
-        e.textContent =
-          translationMap[original];
-
-      }
-
-    });
-
   }
 
-  // -------------------------
-  // TRANSLATE PLACEHOLDERS
-  // -------------------------
+  // Translate remaining placeholders
+  const missingPlaceholders = placeholders.filter(e => {
+    const original = e.dataset.originalPlaceholder;
+    return !local[original];
+  });
 
-  if (missingPlaceholders.length) {
+  const placeholderTexts = missingPlaceholders.map(
+    e => e.dataset.originalPlaceholder
+  );
 
-    const translated =
-      await remoteTranslate(
-        missingPlaceholders,
-        code
-      );
+  if (placeholderTexts.length) {
+    const translatedPlaceholders = await remoteTranslate(
+      placeholderTexts,
+      code
+    );
 
-    const translationMap = {};
-
-    missingPlaceholders.forEach((text, i) => {
-
-      translationMap[text] =
-        translated[i] || text;
-
-    });
-
-    placeholders.forEach(e => {
-
-      const original =
+    missingPlaceholders.forEach((e, i) => {
+      e.placeholder =
+        translatedPlaceholders[i] ||
         e.dataset.originalPlaceholder;
-
-      if (
-        !local[original] &&
-        translationMap[original]
-      ) {
-
-        e.placeholder =
-          translationMap[original];
-
-      }
-
     });
-
   }
 }
 
