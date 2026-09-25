@@ -474,3 +474,51 @@ connectMongo().then(() => {
 });
 
 process.on('SIGINT', async () => { if (mongoClient) await mongoClient.close(); process.exit(0); });
+app.post('/api/translate', async (req, res) => {
+  try {
+    const { text, target } = req.body;
+
+    if (!text || !target) {
+      return res.status(400).json({
+        error: 'Text and target language are required'
+      });
+    }
+
+    const response = await fetch(
+      'https://translation.googleapis.com/language/translate/v2?' +
+      new URLSearchParams({
+        key: process.env.GOOGLE_TRANSLATE_API_KEY
+      }),
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          q: text,
+          source: 'en',
+          target: target,
+          format: 'text'
+        })
+      }
+    );
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      return res.status(response.status).json(data);
+    }
+
+    res.json({
+      translatedText:
+        data.data.translations[0].translatedText
+    });
+
+  } catch (error) {
+    console.error('Translation error:', error);
+
+    res.status(500).json({
+      error: 'Translation failed'
+    });
+  }
+});
