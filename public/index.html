@@ -1271,17 +1271,68 @@ async function remoteTranslate(texts,target){
   }
   return out;
 }
-async function changeLanguage(){
- const code=document.getElementById('language').value||'en'; document.documentElement.lang=code; document.documentElement.dir=code==='ur'?'rtl':'ltr';
- const nodes=[...document.body.querySelectorAll('*')].filter(e=>e.children.length===0 && e.tagName!=='SCRIPT' && e.tagName!=='STYLE' && shouldTranslateText(e.textContent));
- const placeholders=[...document.querySelectorAll('input[placeholder],textarea[placeholder]')];
- const raw=nodes.map(e=>e.textContent.trim()); const ph=placeholders.map(e=>e.getAttribute('placeholder'));
- if(code==='en'){nodes.forEach(e=>{if(e.dataset.originalText)e.textContent=e.dataset.originalText});placeholders.forEach(e=>{if(e.dataset.originalPlaceholder)e.placeholder=e.dataset.originalPlaceholder});return;}
- nodes.forEach((e,i)=>{if(!e.dataset.originalText)e.dataset.originalText=raw[i]}); placeholders.forEach((e,i)=>{if(!e.dataset.originalPlaceholder)e.dataset.originalPlaceholder=ph[i]});
- const local=LOCAL[code]||{}; const need=raw.map(x=>local[x]||null); const missing=[...new Set(raw.filter(x=>!local[x]))];
- const remote=missing.length?await remoteTranslate(missing,LANG_MAP[code]):[]; const map={};missing.forEach((x,i)=>map[x]=remote[i]||x);
- nodes.forEach((e,i)=>e.textContent=need[i]||map[raw[i]]||raw[i]);
- if(ph.length){const pm=ph.map(x=>local[x]||map[x]||x); placeholders.forEach((e,i)=>e.placeholder=pm[i]);}
+function changeLanguage(){
+  const code=document.getElementById('language').value||'en';
+
+  document.documentElement.lang=code;
+  document.documentElement.dir=code==='ur'?'rtl':'ltr';
+
+  const nodes=[...document.body.querySelectorAll('*')]
+    .filter(e =>
+      e.children.length===0 &&
+      e.tagName!=='SCRIPT' &&
+      e.tagName!=='STYLE' &&
+      shouldTranslateText(e.textContent)
+    );
+
+  const placeholders=[
+    ...document.querySelectorAll('input[placeholder],textarea[placeholder]')
+  ];
+
+  // Save original English text
+  nodes.forEach(e=>{
+    if(!e.dataset.originalText){
+      e.dataset.originalText=e.textContent.trim();
+    }
+  });
+
+  placeholders.forEach(e=>{
+    if(!e.dataset.originalPlaceholder){
+      e.dataset.originalPlaceholder=e.getAttribute('placeholder');
+    }
+  });
+
+  // Switch back to English
+  if(code==='en'){
+    nodes.forEach(e=>{
+      e.textContent=e.dataset.originalText;
+    });
+
+    placeholders.forEach(e=>{
+      e.placeholder=e.dataset.originalPlaceholder;
+    });
+
+    return;
+  }
+
+  // Use ONLY local translations
+  const local=LOCAL[code]||{};
+
+  nodes.forEach(e=>{
+    const original=e.dataset.originalText;
+
+    if(local[original]){
+      e.textContent=local[original];
+    }
+  });
+
+  placeholders.forEach(e=>{
+    const original=e.dataset.originalPlaceholder;
+
+    if(local[original]){
+      e.placeholder=local[original];
+    }
+  });
 }
 
 function go(id){document.getElementById(id).scrollIntoView({behavior:'smooth'})}
