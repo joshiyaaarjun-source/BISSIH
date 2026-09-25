@@ -1263,76 +1263,256 @@ const LOCAL={
  ta:{'Portfolio':'போர்ட்ஃபோலியோ','Compliance':'இணக்கம்','Evidence':'ஆதாரம்','13 languages':'13 மொழிகள்','THE DIFFERENCE':'வித்தியாசம்','Compliance that explains itself.':'தன்னைத்தானே விளக்கும் இணக்கம்.','RAG + Evidence':'RAG + ஆதாரம்','AI Licence Check':'AI உரிமச் சான்று சரிபார்ப்பு','Blueprint Scale':'புளூபிரிண்ட் அளவீடு','Product Builder':'தயாரிப்பு உருவாக்கி','Standards + RAG':'தரநிலைகள் + RAG','Compliance Map':'இணக்க வரைபடம்','Evidence + Licence':'ஆதாரம் + உரிமம்','YOUR PORTFOLIO':'உங்கள் போர்ட்ஃபோலியோ','Add product +':'தயாரிப்பைச் சேர்க்கவும் +','Total products':'மொத்த தயாரிப்புகள்','Compliant':'இணக்கமானது','Needs action':'நடவடிக்கை தேவை','Critical review':'முக்கியமான மதிப்பாய்வு','Needs review':'மதிப்பாய்வு தேவை','Open compliance →':'இணக்கத்தைத் திறக்கவும் →','PRODUCT ONBOARDING':'தயாரிப்பு அறிமுகம்','Choose your scale.':'உங்கள் அளவைத் தேர்ந்தெடுக்கவும்.','Small manufacturer · Guided form':'சிறு உற்பத்தியாளர் · வழிகாட்டும் படிவம்','Large manufacturer · Blueprint':'பெரிய உற்பத்தியாளர் · புளூபிரிண்ட்','Manufacturer':'உற்பத்தியாளர்','Product name':'தயாரிப்பு பெயர்','Model / SKU':'மாடல் / SKU','Factory location':'தொழிற்சாலை இடம்','Product category':'தயாரிப்பு வகை','Existing licence (optional)':'ஏற்கனவே உள்ள உரிமம் (விருப்பம்)','Identify product + build roadmap →':'தயாரிப்பை அடையாளம் கண்டு + பாதை உருவாக்கவும் →','MANUFACTURER BLUEPRINT':'உற்பத்தியாளர் புளூபிரிண்ட்','Electrical Appliances':'மின்சாதனங்கள்','Use blueprint':'புளூபிரிண்ட்டைப் பயன்படுத்தவும்','BULK PRODUCTS':'மொத்த தயாரிப்புகள்','Add many at once.':'பலவற்றை ஒரே நேரத்தில் சேர்க்கவும்.','Upload CSV / Excel':'CSV / Excel பதிவேற்றவும்','No file selected':'கோப்பு தேர்ந்தெடுக்கப்படவில்லை','Apply blueprint to portfolio →':'புளூபிரிண்ட்டை போர்ட்ஃபோலியோவுக்கு பயன்படுத்து →','STANDARDS INTELLIGENCE':'தரநிலை நுண்ணறிவு','Give COMPASS the source.':'COMPASS-க்கு மூலத்தை வழங்கவும்.','Upload BIS PDF':'BIS PDF பதிவேற்றவும்','No PDF selected':'PDF தேர்ந்தெடுக்கப்படவில்லை','ASK COMPASS':'COMPASS-ஐ கேளுங்கள்','Ask COMPASS →':'COMPASS-ஐ கேளுங்கள் →','COMPLIANCE MAP':'இணக்க வரைபடம்','Product identification':'தயாரிப்பு அடையாளம்','Applicable standard':'பொருந்தும் தரநிலை','Testing requirements':'சோதனைத் தேவைகள்','Documentation':'ஆவணப்படுத்தல்','Licence / certification':'உரிமம் / சான்றிதழ்','Final review':'இறுதி மதிப்பாய்வு','EVIDENCE VAULT':'ஆதாரக் களஞ்சியம்','Prove every requirement.':'ஒவ்வொரு தேவைக்கும் ஆதாரம் அளிக்கவும்.','Upload evidence':'ஆதாரத்தைப் பதிவேற்றவும்','AI LICENCE CHECK':'AI உரிமச் சான்று சரிபார்ப்பு','Consistency review':'ஒத்திசைவு மதிப்பாய்வு','Upload licence':'உரிமத்தைப் பதிவேற்றவும்','No licence selected':'உரிமம் தேர்ந்தெடுக்கப்படவில்லை','WHY THIS STANDARD?':'இந்த தரநிலை ஏன்?','Explainability trail':'விளக்கத் தடம்','Ask why →':'ஏன் என்று கேளுங்கள் →','SOURCE':'மூலம்','INTELLIGENCE LAYER':'நுண்ணறிவு அடுக்கு','One compass. Many ways to move forward.':'ஒரு காம்பஸ். முன்னேற பல வழிகள்.','Source first.':'முதலில் மூலம்.','Explain, don’t invent.':'விளக்குங்கள், கற்பனை செய்யாதீர்கள்.','Automate the seams.':'இணைப்புகளை தானியக்கப்படுத்துங்கள்.','THE NEXT STEP':'அடுத்த படி','Know the rule.':'விதியை அறியுங்கள்.','Know the evidence.':'ஆதாரத்தை அறியுங்கள்.','Know where to go.':'எங்கு செல்ல வேண்டும் என்பதை அறியுங்கள்.','Compliance Intelligence':'இணக்க நுண்ணறிவு','Source-backed compliance assistant':'மூல ஆதாரமுள்ள இணக்க உதவியாளர்','Ask COMPASS...':'COMPASS-ஐ கேளுங்கள்...'}
 };
 function shouldTranslateText(s){const x=s.trim(); if(!x||PROTECTED.includes(x)||/^\d+(\.\d+)?%?$/.test(x)) return false; return /[A-Za-z]/.test(x);}
-async function remoteTranslate(texts,target){
-  const out=[];
-  for(let i=0;i<texts.length;i+=8){
-    const batch=texts.slice(i,i+8), joined=batch.map((x,j)=>`[[${j}]] ${x}`).join('\n');
-    try{const u='https://translate.googleapis.com/translate_a/single?client=gtx&sl=en&tl='+encodeURIComponent(target)+'&dt=t&q='+encodeURIComponent(joined);const r=await fetch(u);const a=await r.json();let z=(a[0]||[]).map(x=>x[0]).join('');const parts=z.split(/\[\[(\d+)\]\]\s*/).filter(Boolean);let m={};for(let j=0;j<parts.length-1;j+=2)m[parts[j]]=parts[j+1];batch.forEach((x,j)=>out.push(m[j]||x));}catch(e){batch.forEach(x=>out.push(x));}
+async function remoteTranslate(texts, target) {
+
+  const results = [];
+
+  for (const text of texts) {
+
+    try {
+
+      const response = await fetch('/api/translate', {
+
+        method: 'POST',
+
+        headers: {
+          'Content-Type': 'application/json'
+        },
+
+        body: JSON.stringify({
+          text: text,
+          target: target
+        })
+
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        results.push(text);
+        continue;
+      }
+
+      results.push(
+        data.translatedText || text
+      );
+
+    } catch (error) {
+
+      console.warn(
+        'Translation failed:',
+        text,
+        error
+      );
+
+      results.push(text);
+    }
   }
-  return out;
+
+  return results;
 }
-function changeLanguage(){
-  const code=document.getElementById('language').value||'en';
+async function changeLanguage() {
 
-  document.documentElement.lang=code;
-  document.documentElement.dir=code==='ur'?'rtl':'ltr';
+  const code =
+    document.getElementById('language').value || 'en';
 
-  const nodes=[...document.body.querySelectorAll('*')]
-    .filter(e =>
-      e.children.length===0 &&
-      e.tagName!=='SCRIPT' &&
-      e.tagName!=='STYLE' &&
-      shouldTranslateText(e.textContent)
-    );
+  document.documentElement.lang = code;
 
-  const placeholders=[
-    ...document.querySelectorAll('input[placeholder],textarea[placeholder]')
+  document.documentElement.dir =
+    code === 'ur' ? 'rtl' : 'ltr';
+
+  const nodes = [
+    ...document.body.querySelectorAll('*')
+  ].filter(e =>
+    e.children.length === 0 &&
+    e.tagName !== 'SCRIPT' &&
+    e.tagName !== 'STYLE' &&
+    shouldTranslateText(e.textContent)
+  );
+
+  const placeholders = [
+    ...document.querySelectorAll(
+      'input[placeholder], textarea[placeholder]'
+    )
   ];
 
-  // Save original English text
-  nodes.forEach(e=>{
-    if(!e.dataset.originalText){
-      e.dataset.originalText=e.textContent.trim();
+  // Remember original English text
+  nodes.forEach(e => {
+
+    if (!e.dataset.originalText) {
+      e.dataset.originalText =
+        e.textContent.trim();
     }
+
   });
 
-  placeholders.forEach(e=>{
-    if(!e.dataset.originalPlaceholder){
-      e.dataset.originalPlaceholder=e.getAttribute('placeholder');
+  placeholders.forEach(e => {
+
+    if (!e.dataset.originalPlaceholder) {
+      e.dataset.originalPlaceholder =
+        e.getAttribute('placeholder');
     }
+
   });
 
-  // Switch back to English
-  if(code==='en'){
-    nodes.forEach(e=>{
-      e.textContent=e.dataset.originalText;
+  // -------------------------
+  // SWITCH BACK TO ENGLISH
+  // -------------------------
+
+  if (code === 'en') {
+
+    nodes.forEach(e => {
+      e.textContent =
+        e.dataset.originalText;
     });
 
-    placeholders.forEach(e=>{
-      e.placeholder=e.dataset.originalPlaceholder;
+    placeholders.forEach(e => {
+      e.placeholder =
+        e.dataset.originalPlaceholder;
     });
 
     return;
   }
 
-  // Use ONLY local translations
-  const local=LOCAL[code]||{};
+  const local =
+    LOCAL[code] || {};
 
-  nodes.forEach(e=>{
-    const original=e.dataset.originalText;
+  // -------------------------
+  // APPLY LOCAL TRANSLATIONS
+  // IMMEDIATELY
+  // -------------------------
 
-    if(local[original]){
-      e.textContent=local[original];
+  nodes.forEach(e => {
+
+    const original =
+      e.dataset.originalText;
+
+    if (local[original]) {
+      e.textContent =
+        local[original];
     }
+
   });
 
-  placeholders.forEach(e=>{
-    const original=e.dataset.originalPlaceholder;
+  placeholders.forEach(e => {
 
-    if(local[original]){
-      e.placeholder=local[original];
+    const original =
+      e.dataset.originalPlaceholder;
+
+    if (local[original]) {
+      e.placeholder =
+        local[original];
     }
+
   });
+
+  // -------------------------
+  // FIND EVERYTHING ELSE
+  // -------------------------
+
+  const missing = [
+    ...new Set(
+      nodes
+        .map(e => e.dataset.originalText)
+        .filter(text =>
+          text &&
+          !local[text]
+        )
+    )
+  ];
+
+  const missingPlaceholders = [
+    ...new Set(
+      placeholders
+        .map(e =>
+          e.dataset.originalPlaceholder
+        )
+        .filter(text =>
+          text &&
+          !local[text]
+        )
+    )
+  ];
+
+  // -------------------------
+  // TRANSLATE MISSING TEXT
+  // -------------------------
+
+  if (missing.length) {
+
+    const translated =
+      await remoteTranslate(
+        missing,
+        code
+      );
+
+    const translationMap = {};
+
+    missing.forEach((text, i) => {
+
+      translationMap[text] =
+        translated[i] || text;
+
+    });
+
+    nodes.forEach(e => {
+
+      const original =
+        e.dataset.originalText;
+
+      if (
+        !local[original] &&
+        translationMap[original]
+      ) {
+
+        e.textContent =
+          translationMap[original];
+
+      }
+
+    });
+
+  }
+
+  // -------------------------
+  // TRANSLATE PLACEHOLDERS
+  // -------------------------
+
+  if (missingPlaceholders.length) {
+
+    const translated =
+      await remoteTranslate(
+        missingPlaceholders,
+        code
+      );
+
+    const translationMap = {};
+
+    missingPlaceholders.forEach((text, i) => {
+
+      translationMap[text] =
+        translated[i] || text;
+
+    });
+
+    placeholders.forEach(e => {
+
+      const original =
+        e.dataset.originalPlaceholder;
+
+      if (
+        !local[original] &&
+        translationMap[original]
+      ) {
+
+        e.placeholder =
+          translationMap[original];
+
+      }
+
+    });
+
+  }
 }
 
 function go(id){document.getElementById(id).scrollIntoView({behavior:'smooth'})}
