@@ -440,7 +440,58 @@ app.post('/api/chat', async (req, res) => {
   else { const d = localRead(); d.chat.push(row); localWrite(d); }
   res.json({ answer: a, matches: matches.slice(0, 5) });
 });
+// TRANSLATION API
+app.post('/api/translate', async (req, res) => {
+  try {
 
+    const { text, target } = req.body;
+
+    if (!text || !target) {
+      return res.status(400).json({
+        error: 'Text and target language are required'
+      });
+    }
+
+    // English = no translation needed
+    if (target === 'en') {
+      return res.json({
+        translatedText: text
+      });
+    }
+
+    const url =
+      'https://api.mymemory.translated.net/get?' +
+      new URLSearchParams({
+        q: text,
+        langpair: `en|${target}`
+      });
+
+    const response = await fetch(url);
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      return res.status(502).json({
+        error: 'Translation service failed'
+      });
+    }
+
+    const translated =
+      data?.responseData?.translatedText;
+
+    res.json({
+      translatedText: translated || text
+    });
+
+  } catch (error) {
+
+    console.error('Translation error:', error);
+
+    res.status(500).json({
+      error: 'Translation failed'
+    });
+  }
+});
 app.use((req, res) => res.sendFile(path.join(ROOT, 'public', 'index.html')));
 
 function startServer(port, attemptsLeft = 10) {
@@ -474,51 +525,3 @@ connectMongo().then(() => {
 });
 
 process.on('SIGINT', async () => { if (mongoClient) await mongoClient.close(); process.exit(0); });
-app.post('/api/translate', async (req, res) => {
-  try {
-    const { text, target } = req.body;
-
-    if (!text || !target) {
-      return res.status(400).json({
-        error: 'Text and target language are required'
-      });
-    }
-
-    const response = await fetch(
-      'https://translation.googleapis.com/language/translate/v2?' +
-      new URLSearchParams({
-        key: process.env.GOOGLE_TRANSLATE_API_KEY
-      }),
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          q: text,
-          source: 'en',
-          target: target,
-          format: 'text'
-        })
-      }
-    );
-
-    const data = await response.json();
-
-    if (!response.ok) {
-      return res.status(response.status).json(data);
-    }
-
-    res.json({
-      translatedText:
-        data.data.translations[0].translatedText
-    });
-
-  } catch (error) {
-    console.error('Translation error:', error);
-
-    res.status(500).json({
-      error: 'Translation failed'
-    });
-  }
-});
